@@ -57,14 +57,7 @@ export default function CuteParticles() {
             fontSize: `${particle.size}px`
           }}
         >
-          {particle.type === 'heart' ? '💛' : (
-            <img 
-              src="/assets/generated/sparkle-particles.dim_256x256.png" 
-              alt="" 
-              className="w-full h-full object-contain"
-              style={{ width: `${particle.size}px`, height: `${particle.size}px` }}
-            />
-          )}
+          {particle.type === 'heart' ? '💛' : '✨'}
         </div>
       ))}
     </div>

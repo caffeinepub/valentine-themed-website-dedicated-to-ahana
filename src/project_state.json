@@ -1,13 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 11,
-  "summary": "Build a brand-new simple, cute, proposal-themed single-page website dedicated to Ahana, as a message from Suvo to Ahana, incorporating the user’s uploaded photos (select the best 2 similar photos to use).",
+  "projectStateVersion": 15,
+  "summary": "Build a brand-new simple, cute, text-only Valentine/proposal-themed single-page website dedicated to Ahana, as a message from Suvo to Ahana (no photos).",
   "architectural_notes": [
     "Personalization detail: the Valentine website content should present the message as coming from the user named “Suvo” to his girlfriend “Ahana”. तप",
     "Tone update: include a proposal angle with a mix of cute, funny, dramatic, and romantic content while keeping user-facing text in English and clearly from Suvo to Ahana.",
     "Scope decision: user explicitly wants a NEW site (fresh design/content) rather than modifying the existing Ahana–Suvo proposal page.",
     "Scope refinement: user wants a brand-new simple/cute (more minimal) proposal site, not a more elaborate multi-step interaction-heavy version.",
-    "Asset decision: use the user-uploaded photos on the page; choose the best 2 photos since some are similar."
+    "Scope update: user wants the Ahana proposal/Valentine site to be text-only with no photos (remove photo sections and do not reference image assets)."
   ],
   "known_issues": [],
   "isFixRequest": false,
@@ -179,6 +179,38 @@
         "REQ-21"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-add-the-two-couple-photo-files-referenced-by-the-proposal-page-into-the-frontend-public-assets-so-the-production-site-can-load-them-at-the-exact-paths-currently-used-assets-photos-img-3752-jpeg-and-assets-photos-img-3753-jpeg",
+      "title": "Add the two couple photo files referenced by the proposal page into the frontend public assets so the production site can load them at the exact paths currently used: /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-all-photo-usage-from-the-current-single-page-site-and-make-the-valentine-proposal-experience-completely-text-only-do-not-display-any-uploaded-images-including-img-5979-jpeg-and-remove-all-img-references-such-as-assets-photos-img-3752-jpeg-and-assets-photos-img-3753-jpeg",
+      "title": "Remove all photo usage from the current single-page site and make the Valentine/proposal experience completely text-only (do not display any uploaded images, including IMG_5979.jpeg, and remove all <img> references such as /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg).",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-app-renders-a-simple-cute-valentine-themed-single-page-message-for-ahana-that-is-clearly-from-suvo-keeping-all-user-facing-text-in-english-and-aligning-the-layout-content-with-the-earlier-first-web-valentine-style-hero-short-love-note-letter-reasons-list-closing-cta",
+      "title": "Ensure the app renders a simple, cute, Valentine-themed single-page message for Ahana that is clearly from Suvo, keeping all user-facing text in English and aligning the layout/content with the earlier ‘first web’ Valentine style (hero + short love note/letter + reasons list + closing CTA).",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-closing-interaction-copy-to-be-valentine-focused-e-g-ahana-will-you-be-my-valentine-and-keep-the-interaction-simple-single-step-or-at-most-two-steps-with-an-optional-lightweight-celebration-effect-that-respects-prefers-reduced-motion",
+      "title": "Update the closing interaction copy to be Valentine-focused (e.g., “Ahana, will you be my Valentine?”) and keep the interaction simple (single-step or at most two steps) with an optional lightweight celebration effect that respects prefers-reduced-motion.",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -201,8 +233,8 @@
       "status": "pending"
     },
     {
-      "id": "AR-4",
-      "summary": "Incorporate the user’s uploaded couple photos into the new simple cute proposal site, selecting the best 2 from the provided similar images.",
+      "id": "AR-7",
+      "summary": "Remove all photo usage and photo sections; make the Ahana Valentine/proposal site text-only with a cute, simple design.",
       "reqIds": [],
       "status": "pending"
     }

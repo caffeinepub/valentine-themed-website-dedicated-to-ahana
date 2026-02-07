@@ -30,7 +30,7 @@ export default function SimpleProposalMoment() {
             <Heart className="w-20 h-20 text-coral-accent animate-pulse" fill="currentColor" />
           </div>
           <CardTitle className="text-4xl md:text-5xl text-coral-accent dark:text-coral-accent-light font-display leading-tight">
-            {step === 'ask' && 'Ahana, Will You Be My Girlfriend?'}
+            {step === 'ask' && 'Ahana, Will You Be My Valentine?'}
             {step === 'celebration' && 'She Said Yes! 🎉'}
           </CardTitle>
         </CardHeader>

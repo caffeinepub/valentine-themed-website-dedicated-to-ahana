@@ -1,72 +1,56 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T21:07:40.429Z",
-  "summary": "Diff implements a new single-page proposal layout (hero + message + proposal moment) and adds a new 2-step proposal component. However, evidence is insufficient that the selected photos were actually added as static assets, and it’s not fully clear that the experience is consistently attributed to “Suvo” in on-page copy. Diff also includes/retains extra components (multi-step flow, surprise reveal) and an external promotional footer link that were not requested.",
+  "generatedAt": "2026-02-07T21:36:39.286Z",
+  "summary": "REQ-24 and most of REQ-25 appear implemented via a text-centric single-page layout (hero, love letter, reasons, CTA) and a simple 2-step Valentine CTA component. However, the diff summary indicates photo assets are still present and described as being displayed, which conflicts with the text-only/no-photos requirement (REQ-23). The diff summary also indicates additional interactive components (e.g., a 4-step flow) that were not requested and may conflict with the “simple interaction” constraint.",
   "missing_requirements": [
     {
-      "id": "REQ-20",
-      "requirement": "Add exactly two selected uploaded photos as static frontend assets (not backend-served) and reference them by filename; render them responsively with object-fit and descriptive alt text.",
-      "reason": "The page references exactly two filenames (IMG_3752.jpeg and IMG_3753.jpeg) and includes alt text, but the diff summary does not show the actual image files being added to the frontend static assets directory (e.g., frontend/public/assets/...). Without asset additions shown, it’s not verifiable that the images are stored as static frontend assets as required.",
+      "id": "REQ-23",
+      "requirement": "Remove all photo usage and make the experience completely text-only; do not reference/display any uploaded images including IMG_5979.jpeg; remove all <img> references such as /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg.",
+      "reason": "The diff summary explicitly lists photo files under frontend/public/assets/photos and states they are displayed in sections of the proposal page, which contradicts the requirement to remove all photo usage and references.",
       "evidence": [
-        "frontend/src/pages/AhanaProposalPage.tsx (references /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg)",
-        "file-diff summary shows no added image assets under frontend/public or similar"
+        "frontend-file-summaries.txt (entries for \"frontend/public/assets/photos/IMG_3752.jpeg\" and \"frontend/public/assets/photos/IMG_3753.jpeg\" describe them as displayed)"
       ]
     },
     {
-      "id": "REQ-19",
-      "requirement": "All visible text clearly indicates it is from Suvo to Ahana (English), in a simple cute single-page proposal layout.",
-      "reason": "The page is clearly addressed to Ahana, but the main page sections shown don’t explicitly say “from Suvo” (the only clear attribution in-page appears to be 'Ahana & Suvo' in the celebration and the document title). The requirement asks that the proposal experience clearly be from Suvo, which is not consistently evident in the visible body copy provided in the diff snippet.",
+      "id": "REQ-25",
+      "requirement": "Optional celebration effect must respect prefers-reduced-motion (i.e., no celebration animation when reduced motion is enabled).",
+      "reason": "A confetti effect is triggered (ConfettiBurst), but the diff summary does not include ConfettiBurst’s implementation, so reduced-motion compliance for that celebration effect cannot be verified from provided evidence.",
       "evidence": [
-        "frontend/src/pages/AhanaProposalPage.tsx (hero headline 'Hey Ahana 💛' and message section copy; footer lacks explicit 'From Suvo')",
-        "frontend/src/components/SimpleProposalMoment.tsx (celebration shows 'Ahana & Suvo' but no explicit sign-off like '— Suvo')",
-        "frontend/index.html (<title>For Ahana 💛 - From Suvo</title>)"
-      ]
-    },
-    {
-      "id": "REQ-21",
-      "requirement": "If any celebration animation is used, it must respect prefers-reduced-motion.",
-      "reason": "The new proposal moment triggers a confetti effect via <ConfettiBurst />, but the diff snippet does not include ConfettiBurst implementation or any prefers-reduced-motion handling within SimpleProposalMoment itself, so reduced-motion compliance for the celebration effect can’t be verified from the provided diff.",
-      "evidence": [
-        "frontend/src/components/SimpleProposalMoment.tsx (imports ConfettiBurst and conditionally renders it)"
+        "frontend/src/components/SimpleProposalMoment.tsx (references ConfettiBurst)",
+        "frontend-file-summaries.txt (mentions frontend/src/components/ConfettiBurst.tsx but its code is not shown)"
       ]
     }
   ],
   "hallucinated_features": [
     {
-      "description": "Interactive 'SurpriseReveal' envelope section that reveals a hidden personal message when clicked.",
-      "reason": "Not requested in REQ-19/20/21; the BuildRequest explicitly calls for minimal sections (hero + short message + photos + proposal moment).",
+      "description": "Including/displaying couple photo assets IMG_3752.jpeg and IMG_3753.jpeg in the proposal page.",
+      "reason": "BuildRequest explicitly requires the site to be text-only with no photos and no references to those assets.",
       "evidence": [
-        "frontend/src/components/SurpriseReveal.tsx (modified)",
-        "frontend-file-summaries.txt (describes SurpriseReveal interactive envelope section)"
+        "frontend-file-summaries.txt (\"frontend/public/assets/photos/IMG_3752.jpeg\": \"displayed in the hero section\"; \"frontend/public/assets/photos/IMG_3753.jpeg\": \"displayed in the message section\")"
       ]
     },
     {
-      "description": "A separate multi-step proposal flow (4 steps) component (ProposalStepFlow) retained/modified.",
-      "reason": "REQ-21 requires a single-step or at most two-step interaction; a 4-step flow is not requested and conflicts with the simplification goal (even if it may no longer be used).",
+      "description": "A multi-step proposal CTA flow with 4 steps (ProposalStepFlow).",
+      "reason": "REQ-25 requires the interaction to be single-step or at most two steps; a 4-step flow exceeds the requested complexity and is not asked for in the BuildRequest.",
       "evidence": [
-        "frontend/src/components/ProposalStepFlow.tsx (modified)",
-        "frontend-file-summaries.txt (describes 'Multi-step proposal CTA flow (4 steps)')"
+        "frontend-file-summaries.txt (\"frontend/src/components/ProposalStepFlow.tsx\": \"Multi-step proposal CTA flow (4 steps)\")"
       ]
     },
     {
-      "description": "Footer includes an external promotional link to 'caffeine.ai'.",
-      "reason": "No requirement asks for external links or promotional attribution; this is additional user-facing content not specified.",
+      "description": "Interactive envelope-style surprise reveal section (SurpriseReveal).",
+      "reason": "Not requested in REQ-23/24/25; the requested structure is hero + letter + reasons + closing CTA with simple interaction.",
       "evidence": [
-        "frontend/src/pages/AhanaProposalPage.tsx (footer link to https://caffeine.ai)"
+        "frontend-file-summaries.txt (\"frontend/src/components/SurpriseReveal.tsx\": \"Interactive surprise section with envelope illustration...\")"
       ]
     }
   ],
-  "confidence": 0.72,
+  "confidence": 0.7,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/index.html",
-    "frontend/src/components/FloatingHearts.tsx",
-    "frontend/src/components/ProposalStepFlow.tsx",
+    "frontend/src/components/CuteParticles.tsx",
     "frontend/src/components/SimpleProposalMoment.tsx",
-    "frontend/src/components/SurpriseReveal.tsx",
     "frontend/src/pages/AhanaProposalPage.tsx",
-    "frontend/src/pages/AhanaValentinePage.tsx",
     "project_state.json"
   ]
 }

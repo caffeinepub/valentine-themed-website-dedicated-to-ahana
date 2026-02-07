@@ -5,10 +5,12 @@
   "frontend/src/index.css": "Global styles with warm peach/coral/sunset OKLCH color palette for light and dark modes, custom Google Fonts (Quicksand and Pacifico), and particle/confetti animations with reduced-motion support.",
   "frontend/tailwind.config.js": "Tailwind configuration extended with warm peach/coral/sunset theme colors, custom fonts (Quicksand and Pacifico display), and custom animation keyframes for particles, gentle float, slow spin, and confetti.",
   "frontend/index.html": "HTML entry point with updated title and meta description for the simple proposal website from Suvo to Ahana.",
-  "frontend/src/pages/AhanaProposalPage.tsx": "Simple single-page proposal experience with hero section featuring couple photo, sweet message with second photo, and minimal proposal moment, all clearly from Suvo to Ahana with warm peach/coral aesthetic.",
-  "frontend/src/components/CuteParticles.tsx": "Performant decorative particle layer mixing hearts (emoji) and sparkles (using generated sprite sheet) with reduced-motion support.",
+  "frontend/src/pages/AhanaProposalPage.tsx": "Simple text-only Valentine proposal page with hero section addressed to Ahana from Suvo, love letter, reasons list, and interactive Valentine CTA, all using warm peach/coral aesthetic with no photos.",
+  "frontend/src/components/CuteParticles.tsx": "Performant decorative particle layer using text-only characters (💛 hearts and ✨ sparkles) with reduced-motion support, no image dependencies.",
   "frontend/src/components/SurpriseReveal.tsx": "Interactive surprise section with envelope illustration that reveals a hidden personal message from Suvo to Ahana when clicked.",
   "frontend/src/components/ProposalStepFlow.tsx": "Multi-step proposal CTA flow (4 steps) with humorous beats, ending in celebratory \"Yes\" outcome that explicitly mentions Ahana and Suvo, triggering confetti burst.",
   "frontend/src/components/ConfettiBurst.tsx": "Lightweight celebratory confetti burst component triggered on final \"Yes\" with reduced-motion accessibility support.",
-  "frontend/src/components/SimpleProposalMoment.tsx": "Minimal 2-step proposal component (ask → celebration) with single \"Yes\" button that triggers confetti and shows celebration message addressed to Ahana from Suvo."
+  "frontend/src/components/SimpleProposalMoment.tsx": "Minimal 1-step Valentine proposal component asking \"Will you be my Valentine?\" with single \"Yes\" button that triggers confetti and shows celebration message addressed to Ahana from Suvo.",
+  "frontend/public/assets/photos/IMG_3752.jpeg": "First couple photo displayed in the hero section of the proposal page.",
+  "frontend/public/assets/photos/IMG_3753.jpeg": "Second couple photo displayed in the message section of the proposal page."
 }

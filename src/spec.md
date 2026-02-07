@@ -1,11 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Replace the current proposal page with a brand-new, simple, cute single-page proposal experience in English, addressed to Ahana and clearly from Suvo, using the best 2 uploaded photos.
+**Goal:** Convert the existing Ahana Valentine/proposal single-page site into a simple, cute, text-only Valentine message (no photos), clearly from Suvo.
 
 **Planned changes:**
-- Redesign the proposal UI into a minimal single-page layout (hero + short message + photos + proposal moment) with a warm, cute aesthetic (avoid a blue/purple primary palette).
-- Select exactly two best-looking unique photos from the four uploads and add them as static frontend assets; render them responsively with sensible cropping and non-identifying descriptive alt text.
-- Add a simple proposal interaction (one step, or at most two) that ends with a celebratory “Yes” outcome addressed to Ahana and attributed to Suvo, with an optional lightweight celebration effect that respects prefers-reduced-motion.
+- Remove all photo usage and references from the UI (including any references to `/assets/photos/IMG_3752.jpeg`, `/assets/photos/IMG_3753.jpeg`, and `IMG_5979.jpeg`), ensuring no photo placeholders remain.
+- Restructure/keep the page as a Valentine-themed single-page layout in English: hero addressed to Ahana, short love note/letter signed by Suvo, a static reasons list, and a closing CTA section.
+- Update the closing interaction to be Valentine-focused (e.g., “Ahana, will you be my Valentine?”), keeping it one-step (or at most two steps) and optionally adding a lightweight celebration effect that respects `prefers-reduced-motion`.
 
-**User-visible outcome:** Visitors see a clean, cute proposal page from Suvo to Ahana featuring two photos and a simple “Yes” moment with a small celebration (reduced/disabled if motion reduction is enabled).
+**User-visible outcome:** A clean, cute, text-only Valentine page for Ahana from Suvo that ends with a simple Valentine CTA and a celebratory “Yes” completion (with motion reduced when the user prefers reduced motion).

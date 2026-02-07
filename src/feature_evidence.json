@@ -2,10 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-replace-the-current-proposal-page-ui-with-a-brand-new-simple-cute-single-page-proposal-experience-addressed-to-ahana-and-clearly-from-suvo-with-minimal-sections-hero-short-message-photos-proposal-moment-and-all-user-facing-text-in-english",
-      "featureTitle": "Replace the current proposal page UI with a brand-new, simple, cute single-page proposal experience addressed to “Ahana” and clearly from “Suvo”, with minimal sections (hero + short message + photos + proposal moment) and all user-facing text in English.",
+      "featureId": "feature-remove-all-photo-usage-from-the-current-single-page-site-and-make-the-valentine-proposal-experience-completely-text-only-do-not-display-any-uploaded-images-including-img-5979-jpeg-and-remove-all-img-references-such-as-assets-photos-img-3752-jpeg-and-assets-photos-img-3753-jpeg",
+      "featureTitle": "Remove all photo usage from the current single-page site and make the Valentine/proposal experience completely text-only (do not display any uploaded images, including IMG_5979.jpeg, and remove all <img> references such as /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg).",
       "files": [
-        "frontend/index.html",
+        "frontend/src/components/CuteParticles.tsx",
         "frontend/src/pages/AhanaProposalPage.tsx"
       ],
       "components": [
@@ -16,13 +16,13 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-19"
+        "REQ-23"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-incorporate-the-user-s-uploaded-photos-into-the-new-page-by-selecting-the-best-2-unique-images-from-img-3752-jpeg-img-3753-jpeg-img-3752-1-jpeg-img-3753-1-jpeg-add-the-chosen-2-as-static-frontend-assets-and-render-them-on-the-page-e-g-one-primary-hero-photo-one-secondary-photo-section",
-      "featureTitle": "Incorporate the user’s uploaded photos into the new page by selecting the best 2 unique images from: IMG_3752.jpeg, IMG_3753.jpeg, IMG_3752-1.jpeg, IMG_3753-1.jpeg; add the chosen 2 as static frontend assets and render them on the page (e.g., one primary hero photo + one secondary photo section).",
+      "featureId": "feature-ensure-the-app-renders-a-simple-cute-valentine-themed-single-page-message-for-ahana-that-is-clearly-from-suvo-keeping-all-user-facing-text-in-english-and-aligning-the-layout-content-with-the-earlier-first-web-valentine-style-hero-short-love-note-letter-reasons-list-closing-cta",
+      "featureTitle": "Ensure the app renders a simple, cute, Valentine-themed single-page message for Ahana that is clearly from Suvo, keeping all user-facing text in English and aligning the layout/content with the earlier ‘first web’ Valentine style (hero + short love note/letter + reasons list + closing CTA).",
       "files": [
         "frontend/src/pages/AhanaProposalPage.tsx"
       ],
@@ -34,13 +34,13 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-20"
+        "REQ-24"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-implement-a-simple-cute-proposal-interaction-at-the-end-of-the-page-single-step-or-at-most-two-steps-that-culminates-in-a-celebratory-yes-outcome-for-ahana-signed-attributed-to-suvo-and-optionally-triggers-a-lightweight-celebration-effect-that-respects-prefers-reduced-motion",
-      "featureTitle": "Implement a simple, cute proposal interaction at the end of the page (single-step or at most two steps) that culminates in a celebratory “Yes” outcome for Ahana, signed/attributed to Suvo, and optionally triggers a lightweight celebration effect that respects prefers-reduced-motion.",
+      "featureId": "feature-update-the-closing-interaction-copy-to-be-valentine-focused-e-g-ahana-will-you-be-my-valentine-and-keep-the-interaction-simple-single-step-or-at-most-two-steps-with-an-optional-lightweight-celebration-effect-that-respects-prefers-reduced-motion",
+      "featureTitle": "Update the closing interaction copy to be Valentine-focused (e.g., “Ahana, will you be my Valentine?”) and keep the interaction simple (single-step or at most two steps) with an optional lightweight celebration effect that respects prefers-reduced-motion.",
       "files": [
         "frontend/src/components/SimpleProposalMoment.tsx",
         "frontend/src/pages/AhanaProposalPage.tsx"
@@ -53,7 +53,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-21"
+        "REQ-25"
       ],
       "confidence": "high"
     }

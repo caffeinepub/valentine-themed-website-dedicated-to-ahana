@@ -1,83 +1,63 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Simple cute single-page proposal for Ahana (from Suvo) with 2 photos",
+  "title": "Text-only cute Valentine single-page for Ahana (from Suvo)",
   "requirements": [
     {
-      "id": "REQ-19",
-      "summary": "Replace the current proposal page with a brand-new simple, cute single-page experience addressed to Ahana and from Suvo (English only), with minimal sections and a warm aesthetic.",
+      "id": "REQ-23",
+      "summary": "Remove all photo usage and eliminate any <img> references so the page is fully text-only.",
       "acceptanceCriteria": [
-        "The app renders a single-page proposal experience that is visibly simpler than the current multi-section page (no long story/reasons/surprise sections unless explicitly kept minimal).",
-        "All visible text is in English and clearly indicates it is from Suvo to Ahana.",
-        "The page is responsive across mobile and desktop and maintains a cute, warm aesthetic (avoid a blue/purple primary palette)."
+        "The page renders with zero photo/image sections intended as photos (no couple photos, no hero photo).",
+        "No code in the rendered page references /assets/photos/IMG_3752.jpeg or /assets/photos/IMG_3753.jpeg.",
+        "The uploaded image IMG_5979.jpeg is not referenced or displayed anywhere in the UI."
       ],
       "file_operations": [
         {
           "path": "frontend/src/pages/AhanaProposalPage.tsx",
           "operation": "modify",
-          "description": "Rewrite the page layout to a minimal, single-page structure (hero + short message + photos + proposal moment), removing the long story/reasons/surprise sections; keep a cute, warm tone and ensure all visible copy is English and clearly from “Suvo” to “Ahana”. Use shadcn-ui components (e.g., Card, Button) for consistent styling; Verify the component's usage instructions before implementing."
+          "description": "Remove hero/message photo blocks and delete all <img> tags referencing /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg; ensure the layout has no photo placeholders or empty photo containers."
         },
         {
-          "path": "frontend/index.html",
+          "path": "frontend/src/components/CuteParticles.tsx",
           "operation": "modify",
-          "description": "Update the document title/description to match the new simple proposal wording (English), clearly indicating it is from Suvo to Ahana."
-        },
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Ensure global styling supports a cute, warm aesthetic and responsive typography/spacing for the simplified page (avoid blue/purple emphasis); keep reduced-motion considerations intact."
+          "description": "Remove the <img> usage for sparkles (/assets/generated/sparkle-particles.dim_256x256.png) and replace it with text-only characters (e.g., ✨) while keeping prefers-reduced-motion behavior intact."
         }
       ]
     },
     {
-      "id": "REQ-20",
-      "summary": "Select and add exactly two best unique uploaded photos as static frontend assets and render them responsively with descriptive non-identifying alt text.",
+      "id": "REQ-24",
+      "summary": "Render a simple, cute, Valentine-themed single-page message in English with hero, love note, reasons list, and closing CTA (for Ahana, from Suvo).",
       "acceptanceCriteria": [
-        "Exactly two of the four uploaded images are used on the page (the best-looking two unique photos are selected).",
-        "The selected photos are stored as static assets in the frontend (not served via the backend) and are referenced by their filenames.",
-        "Images are displayed responsively with sensible cropping (object-fit) and include non-identifying, descriptive alt text (e.g., “A cozy couple photo”)."
+        "The page includes: (1) a hero section addressed to Ahana, (2) a short love note/letter signed by Suvo, (3) a static ‘reasons’ list, and (4) a closing Valentine CTA section.",
+        "All visible text is in English and clearly indicates it is for Ahana and from Suvo.",
+        "No photo placeholders or empty photo blocks remain in the layout."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/photos/IMG_3752.jpeg",
-          "operation": "create",
-          "description": "Add the selected primary photo as a static frontend asset (chosen as one of the best two unique images) to be referenced by filename."
-        },
-        {
-          "path": "frontend/public/assets/photos/IMG_3753.jpeg",
-          "operation": "create",
-          "description": "Add the selected secondary photo as a static frontend asset (chosen as one of the best two unique images) to be referenced by filename."
-        },
-        {
           "path": "frontend/src/pages/AhanaProposalPage.tsx",
           "operation": "modify",
-          "description": "Render exactly two photos (hero and secondary) using the static asset filenames (frontend/public/assets/photos/IMG_3752.jpeg and frontend/public/assets/photos/IMG_3753.jpeg), with responsive sizing and sensible cropping (object-fit), plus non-identifying descriptive alt text."
+          "description": "Rewrite the single-page content to match the requested 'first web' style structure (hero + short love note/letter + reasons list + closing CTA), ensuring all user-facing text is English, addressed to Ahana, and clearly from Suvo; keep the page as a single scrollable view."
         }
       ]
     },
     {
-      "id": "REQ-21",
-      "summary": "Implement a simple (<=2-step) cute proposal interaction that ends in a celebratory Yes outcome for Ahana, attributed to Suvo, with optional reduced-motion-friendly celebration.",
+      "id": "REQ-25",
+      "summary": "Update the closing interaction to be Valentine-focused with a simple 1–2 step flow and optional celebration respecting prefers-reduced-motion.",
       "acceptanceCriteria": [
-        "The proposal interaction is simpler than the existing multi-step flow (no more than two steps).",
-        "On “Yes”, the UI shows a clear celebration message addressed to Ahana and attributed to Suvo.",
-        "If any animation is used (e.g., confetti/particles), it is disabled/reduced when prefers-reduced-motion is enabled."
+        "The CTA prompt asks Ahana to be the user’s Valentine (not ‘girlfriend’ unless explicitly included as secondary copy).",
+        "The interaction completes in one step (or two steps maximum) and ends in a celebratory ‘Yes’ outcome addressed to Ahana and attributed to Suvo.",
+        "If celebration animation (e.g., confetti) runs, it does not run when prefers-reduced-motion is enabled."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/SimpleProposalMoment.tsx",
-          "operation": "create",
-          "description": "Create a minimal proposal interaction component with at most two states (ask → yes celebration), culminating in a clear “Yes” outcome addressed to Ahana and signed/attributed to Suvo. Use shadcn-ui components (e.g., Card, Button) for the interaction UI; Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/ConfettiBurst.tsx",
           "operation": "modify",
-          "description": "Ensure the celebration effect remains lightweight and continues to respect prefers-reduced-motion (no confetti rendered when reduced motion is enabled)."
+          "description": "Update the primary CTA copy to Valentine-focused wording (e.g., 'Ahana, will you be my Valentine?') and adjust the celebration step copy so it is addressed to Ahana and clearly from Suvo; keep the interaction at 1 step (or max 2) and continue using the existing reduced-motion-safe celebration behavior. Use shadcn-ui components (Card, Button) for consistent UI; verify the component's usage instructions before implementing."
         },
         {
           "path": "frontend/src/pages/AhanaProposalPage.tsx",
           "operation": "modify",
-          "description": "Wire the new SimpleProposalMoment component into the end of the single-page experience and remove/avoid usage of the existing multi-step proposal flow to keep the interaction to <=2 steps; Verify the component's usage instructions before implementing."
+          "description": "Ensure the closing CTA section uses the updated Valentine interaction component and does not include any extra steps beyond the defined flow; keep surrounding copy Valentine-themed and text-only."
         }
       ]
     }
