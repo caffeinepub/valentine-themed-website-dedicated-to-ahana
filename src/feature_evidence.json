@@ -1,0 +1,102 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-responsive-single-page-valentine-website-dedicated-to-the-name-ahana-with-all-user-facing-text-in-english-and-a-romantic-tone",
+      "featureTitle": "Create a responsive, single-page Valentine website dedicated to the name “Ahana”, with all user-facing text in English and a romantic tone.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AhanaValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-coherent-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-valentine-love-letter-aesthetic-applied-consistently-across-the-page-avoid-a-blue-purple-primary-palette",
+      "featureTitle": "Implement a coherent visual theme (colors, typography, spacing, and component styling) suitable for a Valentine/love-letter aesthetic, applied consistently across the page (avoid a blue/purple primary palette).",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/AhanaValentinePage.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-core-sections-to-the-page-1-hero-banner-2-short-love-note-letter-3-reasons-i-love-you-list-static-and-4-a-closing-call-to-action-section-such-as-will-you-be-my-valentine-with-simple-on-page-interaction-no-authentication",
+      "featureTitle": "Add core sections to the page: (1) Hero banner, (2) Short love note/letter, (3) “Reasons I love you” list (static), and (4) A closing call-to-action section such as “Will you be my Valentine?” with simple on-page interaction (no authentication).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AhanaValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-lightweight-decorative-animations-suitable-for-the-theme-e-g-floating-hearts-or-subtle-sparkles-that-respect-performance-and-accessibility-provide-a-way-to-reduce-motion-if-the-user-prefers-reduced-motion",
+      "featureTitle": "Add lightweight decorative animations suitable for the theme (e.g., floating hearts or subtle sparkles) that respect performance and accessibility (provide a way to reduce motion if the user prefers reduced motion).",
+      "files": [
+        "frontend/src/components/FloatingHearts.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/AhanaValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-required-static-image-assets-to-the-project-and-render-them-on-the-page-from-frontend-public-assets-generated-do-not-serve-images-via-the-backend",
+      "featureTitle": "Add required static image assets to the project and render them on the page from frontend/public/assets/generated (do not serve images via the backend).",
+      "files": [
+        "frontend/src/pages/AhanaValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

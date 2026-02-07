@@ -1,0 +1,138 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Valentine-themed single-page site for Ahana",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a responsive single-page Valentine website dedicated to “Ahana” with romantic English copy.",
+      "acceptanceCriteria": [
+        "Homepage renders without errors on desktop and mobile widths.",
+        "The name “Ahana” is prominently displayed in the hero section.",
+        "All visible text is in English.",
+        "Content and visuals clearly communicate a Valentine/romantic theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the single-page React app shell that renders the Ahana Valentine page (hero, letter, reasons, CTA) and ensures responsive layout with Tailwind utilities."
+        },
+        {
+          "path": "frontend/src/pages/AhanaValentinePage.tsx",
+          "operation": "create",
+          "description": "Implement the full single-page content with romantic English copy and responsive section structure (no additional routes). Use shadcn-ui components (e.g., Button/Card) for consistent UI primitives; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Ensure document metadata supports the single-page experience (title already set) and optionally add a romantic typography font import to match the Valentine theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply a consistent Valentine love-letter visual theme (non-blue/purple primary palette) across the page.",
+      "acceptanceCriteria": [
+        "A single, consistent theme is used across all sections (typography + color palette + spacing).",
+        "Primary styling is not based on blue/purple as the dominant palette.",
+        "UI remains readable with sufficient contrast for text on backgrounds."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define global theme tokens (CSS variables used by Tailwind/shadcn) and base typography for a Valentine palette (pinks/reds/creams), ensuring accessible contrast and consistent spacing/typography across the page."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions (if needed) to support the Valentine palette and any custom keyframes used by decorative animations, keeping styling consistent and avoiding blue/purple as primary."
+        },
+        {
+          "path": "frontend/src/pages/AhanaValentinePage.tsx",
+          "operation": "modify",
+          "description": "Apply the theme consistently across all sections using Tailwind classes and shadcn-ui components for cohesive spacing/typography; verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add four core sections (hero, love letter, reasons list, closing CTA) with a simple local interaction in the closing section.",
+      "acceptanceCriteria": [
+        "All four sections are present and reachable by scrolling.",
+        "The “Reasons I love you” list displays at least 5 items.",
+        "The closing section includes a simple interaction (e.g., buttons or toggle) that updates the UI state locally in the browser."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AhanaValentinePage.tsx",
+          "operation": "modify",
+          "description": "Add: (1) Hero banner with prominent “Ahana”, (2) short love note/letter section, (3) static “Reasons I love you” list (>= 5 items), and (4) closing CTA with local state interaction (e.g., Yes/No buttons updating on-page message). Use shadcn-ui Button/Card (or similar) for the CTA and content framing; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the single-page layout to render the AhanaValentinePage so all sections are reachable by scrolling (no additional routes)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Add lightweight decorative animations (e.g., floating hearts) that respect prefers-reduced-motion and performance.",
+      "acceptanceCriteria": [
+        "At least one decorative animation is visible on the page.",
+        "If the OS/browser prefers-reduced-motion setting is enabled, animations are reduced/disabled appropriately.",
+        "Animation does not significantly degrade scrolling or interaction responsiveness."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FloatingHearts.tsx",
+          "operation": "create",
+          "description": "Create a lightweight decorative animation layer (e.g., floating hearts/sparkles) implemented with performant CSS animations and minimal DOM, with behavior gated by prefers-reduced-motion."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add keyframes/utility classes for decorative animations and include a prefers-reduced-motion override that disables/reduces motion for the FloatingHearts component."
+        },
+        {
+          "path": "frontend/src/pages/AhanaValentinePage.tsx",
+          "operation": "modify",
+          "description": "Render the FloatingHearts decorative layer in a non-intrusive way (behind content, pointer-events disabled) to keep scrolling and CTA interaction responsive."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add required generated static images under frontend/public/assets/generated and display them on the page (no backend image delivery).",
+      "acceptanceCriteria": [
+        "Generated images are placed under frontend/public/assets/generated.",
+        "The homepage renders and displays the generated assets (e.g., hero background/illustration and a small decorative icon).",
+        "No backend endpoints are used for image delivery."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/ahana-bg.dim_1920x1080.png",
+          "operation": "create",
+          "description": "Add the generated romantic heart-pattern background image asset at the required path for static serving."
+        },
+        {
+          "path": "frontend/public/assets/generated/ahana-hero-illustration.dim_1200x800.png",
+          "operation": "create",
+          "description": "Add the generated envelope-and-heart illustration image asset at the required path for static serving."
+        },
+        {
+          "path": "frontend/public/assets/generated/heart-icon.dim_128x128.png",
+          "operation": "create",
+          "description": "Add the generated small heart icon image asset at the required path for static serving."
+        },
+        {
+          "path": "frontend/src/pages/AhanaValentinePage.tsx",
+          "operation": "modify",
+          "description": "Reference and render the static assets from frontend/public/assets/generated: use frontend/public/assets/generated/ahana-bg.dim_1920x1080.png as a hero/section background, frontend/public/assets/generated/ahana-hero-illustration.dim_1200x800.png as the hero illustration, and frontend/public/assets/generated/heart-icon.dim_128x128.png as a decorative icon in the UI."
+        }
+      ]
+    }
+  ]
+}

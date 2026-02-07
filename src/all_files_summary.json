@@ -1,0 +1,16 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no methods.",
+  "feature_evidence.json": "Feature evidence report mapping Valentine site requirements to files and components.",
+  "frontend-file-summaries.txt": "Prewritten summaries describing roles of key frontend files for the Valentine site.",
+  "frontend/index.css": "Global Tailwind-based style definitions using OKLCH variables and theme tokens.",
+  "frontend/index.html": "Base HTML entry point loading the React app and setting page metadata.",
+  "frontend/src/App.tsx": "Renders the AhanaValentinePage as the main app component.",
+  "frontend/src/components/FloatingHearts.tsx": "Creates randomized floating heart particles with motion and reduced‑motion support.",
+  "frontend/src/hooks/useActor.ts": "React hook that builds and refreshes a backend actor based on Internet Identity state.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides Internet Identity auth context, login handling, and identity persistence.",
+  "frontend/src/index.css": "Global Valentine-themed palette, fonts, and floating heart animations with reduced‑motion rules.",
+  "frontend/src/main.tsx": "Bootstraps React with QueryClient and InternetIdentityProvider, then mounts App.",
+  "frontend/src/pages/AhanaValentinePage.tsx": "Full Valentine page with hero, letter, reasons list, CTA interaction, and animated hearts.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending theme colors, typography, animations, and container settings for the frontend.",
+  "project_state.json": "Project metadata describing requirements and features for a Valentine-themed website dedicated to Ahana."
+}

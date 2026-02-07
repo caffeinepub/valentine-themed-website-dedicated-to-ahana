@@ -1,0 +1,118 @@
+{
+  "kind": "build_request",
+  "title": "Valentine-themed website dedicated to Ahana",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a responsive, single-page Valentine website dedicated to the name “Ahana”, with all user-facing text in English and a romantic tone.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Make a website for my gf name “ahana” for velentine"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Homepage renders without errors on desktop and mobile widths.",
+        "The name “Ahana” is prominently displayed in the hero section.",
+        "All visible text is in English.",
+        "Content and visuals clearly communicate a Valentine/romantic theme."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement a coherent visual theme (colors, typography, spacing, and component styling) suitable for a Valentine/love-letter aesthetic, applied consistently across the page (avoid a blue/purple primary palette).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Make a website for my gf name “ahana” for velentine"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A single, consistent theme is used across all sections (typography + color palette + spacing).",
+        "Primary styling is not based on blue/purple as the dominant palette.",
+        "UI remains readable with sufficient contrast for text on backgrounds."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add core sections to the page: (1) Hero banner, (2) Short love note/letter, (3) “Reasons I love you” list (static), and (4) A closing call-to-action section such as “Will you be my Valentine?” with simple on-page interaction (no authentication).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Make a website for my gf name “ahana” for velentine"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All four sections are present and reachable by scrolling.",
+        "The “Reasons I love you” list displays at least 5 items.",
+        "The closing section includes a simple interaction (e.g., buttons or toggle) that updates the UI state locally in the browser."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add lightweight decorative animations suitable for the theme (e.g., floating hearts or subtle sparkles) that respect performance and accessibility (provide a way to reduce motion if the user prefers reduced motion).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Make a website for my gf name “ahana” for velentine"
+        ]
+      },
+      "acceptanceCriteria": [
+        "At least one decorative animation is visible on the page.",
+        "If the OS/browser prefers-reduced-motion setting is enabled, animations are reduced/disabled appropriately.",
+        "Animation does not significantly degrade scrolling or interaction responsiveness."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add required static image assets to the project and render them on the page from frontend/public/assets/generated (do not serve images via the backend).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Make a website for my gf name “ahana” for velentine"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are placed under frontend/public/assets/generated.",
+        "The homepage renders and displays the generated assets (e.g., hero background/illustration and a small decorative icon).",
+        "No backend endpoints are used for image delivery."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit files under frontend/src/components/ui (compose them instead).",
+    "Do not edit immutable hook files: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx.",
+    "Backend must remain a single Motoko actor (no additional backend services)."
+  ],
+  "nonGoals": [
+    "Internet Identity login or any third-party authentication.",
+    "User accounts, admin panels, or content management.",
+    "Payments, donations, or external API integrations.",
+    "Real-time features (websockets/chat) or push/email notifications.",
+    "Collecting or storing personal data on the backend."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Romantic heart-pattern background with soft gradients (ahana-bg.dim_1920x1080.png)",
+      "Cute Valentine-themed envelope-and-heart illustration, flat/vector style (ahana-hero-illustration.dim_1200x800.png)",
+      "Small heart icon, simple flat style (heart-icon.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

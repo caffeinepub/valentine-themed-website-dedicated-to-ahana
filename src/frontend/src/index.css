@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 1rem;
+        
+        /* Valentine color palette - light mode */
+        --background: 0.98 0.02 15;
+        --foreground: 0.25 0.05 15;
+        
+        --card: 1 0.01 15;
+        --card-foreground: 0.25 0.05 15;
+        
+        --popover: 1 0.01 15;
+        --popover-foreground: 0.25 0.05 15;
+        
+        --primary: 0.55 0.18 15;
+        --primary-foreground: 0.98 0.01 15;
+        
+        --secondary: 0.95 0.03 15;
+        --secondary-foreground: 0.35 0.05 15;
+        
+        --muted: 0.96 0.02 15;
+        --muted-foreground: 0.50 0.04 15;
+        
+        --accent: 0.92 0.04 15;
+        --accent-foreground: 0.35 0.05 15;
+        
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.01 15;
+        
+        --border: 0.90 0.03 15;
+        --input: 0.90 0.03 15;
+        --ring: 0.55 0.18 15;
+        
+        --chart-1: 0.60 0.20 15;
+        --chart-2: 0.65 0.15 340;
+        --chart-3: 0.70 0.12 30;
+        --chart-4: 0.55 0.18 350;
+        --chart-5: 0.75 0.10 20;
+    }
+
+    .dark {
+        /* Valentine color palette - dark mode */
+        --background: 0.20 0.04 15;
+        --foreground: 0.95 0.02 15;
+        
+        --card: 0.25 0.05 15;
+        --card-foreground: 0.95 0.02 15;
+        
+        --popover: 0.22 0.05 15;
+        --popover-foreground: 0.95 0.02 15;
+        
+        --primary: 0.75 0.15 15;
+        --primary-foreground: 0.20 0.04 15;
+        
+        --secondary: 0.30 0.05 15;
+        --secondary-foreground: 0.95 0.02 15;
+        
+        --muted: 0.30 0.05 15;
+        --muted-foreground: 0.65 0.04 15;
+        
+        --accent: 0.35 0.06 15;
+        --accent-foreground: 0.95 0.02 15;
+        
+        --destructive: 0.60 0.20 25;
+        --destructive-foreground: 0.95 0.02 15;
+        
+        --border: 0.30 0.05 15;
+        --input: 0.30 0.05 15;
+        --ring: 0.65 0.12 15;
+        
+        --chart-1: 0.65 0.18 15;
+        --chart-2: 0.70 0.14 340;
+        --chart-3: 0.75 0.10 30;
+        --chart-4: 0.60 0.16 350;
+        --chart-5: 0.80 0.08 20;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+    }
+}
+
+@layer utilities {
+    /* Floating hearts animation */
+    @keyframes float {
+        0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.6;
+        }
+        90% {
+            opacity: 0.6;
+        }
+        100% {
+            transform: translateY(-100vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+    
+    .animate-float {
+        animation: float linear infinite;
+    }
+    
+    /* Respect reduced motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+        .animate-float,
+        .animate-pulse {
+            animation: none;
+        }
+        
+        * {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+        }
+    }
+}

@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a Valentine-themed website dedicated to the user's girlfriend Ahana.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Romantic heart-pattern background with soft gradients (ahana-bg.dim_1920x1080.png)\n- Cute Valentine-themed envelope-and-heart illustration, flat/vector style (ahana-hero-illustration.dim_1200x800.png)\n- Small heart icon, simple flat style (heart-icon.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-responsive-single-page-valentine-website-dedicated-to-the-name-ahana-with-all-user-facing-text-in-english-and-a-romantic-tone",
+      "title": "Create a responsive, single-page Valentine website dedicated to the name “Ahana”, with all user-facing text in English and a romantic tone.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-coherent-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-valentine-love-letter-aesthetic-applied-consistently-across-the-page-avoid-a-blue-purple-primary-palette",
+      "title": "Implement a coherent visual theme (colors, typography, spacing, and component styling) suitable for a Valentine/love-letter aesthetic, applied consistently across the page (avoid a blue/purple primary palette).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-core-sections-to-the-page-1-hero-banner-2-short-love-note-letter-3-reasons-i-love-you-list-static-and-4-a-closing-call-to-action-section-such-as-will-you-be-my-valentine-with-simple-on-page-interaction-no-authentication",
+      "title": "Add core sections to the page: (1) Hero banner, (2) Short love note/letter, (3) “Reasons I love you” list (static), and (4) A closing call-to-action section such as “Will you be my Valentine?” with simple on-page interaction (no authentication).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-lightweight-decorative-animations-suitable-for-the-theme-e-g-floating-hearts-or-subtle-sparkles-that-respect-performance-and-accessibility-provide-a-way-to-reduce-motion-if-the-user-prefers-reduced-motion",
+      "title": "Add lightweight decorative animations suitable for the theme (e.g., floating hearts or subtle sparkles) that respect performance and accessibility (provide a way to reduce motion if the user prefers reduced motion).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-required-static-image-assets-to-the-project-and-render-them-on-the-page-from-frontend-public-assets-generated-do-not-serve-images-via-the-backend",
+      "title": "Add required static image assets to the project and render them on the page from frontend/public/assets/generated (do not serve images via the backend).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a Valentine website for girlfriend named “Ahana” (romantic themed, personalized).",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Valentine-themed website dedicated to Ahana",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

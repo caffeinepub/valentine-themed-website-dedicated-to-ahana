@@ -1,0 +1,8 @@
+{
+  "frontend/src/App.tsx": "Main app component that renders the single-page Valentine website for Ahana.",
+  "frontend/src/pages/AhanaValentinePage.tsx": "Complete Valentine's Day page with hero section, love letter, reasons list, and interactive \"Will you be my Valentine?\" CTA with local state management.",
+  "frontend/src/components/FloatingHearts.tsx": "Decorative floating hearts animation component with randomized positioning and timing, respecting prefers-reduced-motion accessibility settings.",
+  "frontend/src/index.css": "Global styles with romantic pink/rose/cream OKLCH color palette for light and dark modes, custom Google Fonts (Playfair Display and Poppins), and floating hearts animation with reduced-motion support.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with Valentine theme colors, custom fonts (Poppins and Playfair Display), and float animation keyframes.",
+  "frontend/index.html": "HTML entry point with updated title and meta description for the Valentine's website."
+}
