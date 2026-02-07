@@ -1,11 +1,16 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "Build a Valentine-themed website dedicated to the user's girlfriend Ahana.",
-  "architectural_notes": [],
+  "projectStateVersion": 11,
+  "summary": "Build a brand-new simple, cute, proposal-themed single-page website dedicated to Ahana, as a message from Suvo to Ahana, incorporating the user’s uploaded photos (select the best 2 similar photos to use).",
+  "architectural_notes": [
+    "Personalization detail: the Valentine website content should present the message as coming from the user named “Suvo” to his girlfriend “Ahana”. तप",
+    "Tone update: include a proposal angle with a mix of cute, funny, dramatic, and romantic content while keeping user-facing text in English and clearly from Suvo to Ahana.",
+    "Scope decision: user explicitly wants a NEW site (fresh design/content) rather than modifying the existing Ahana–Suvo proposal page.",
+    "Scope refinement: user wants a brand-new simple/cute (more minimal) proposal site, not a more elaborate multi-step interaction-heavy version.",
+    "Asset decision: use the user-uploaded photos on the page; choose the best 2 photos since some are similar."
+  ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Romantic heart-pattern background with soft gradients (ahana-bg.dim_1920x1080.png)\n- Cute Valentine-themed envelope-and-heart illustration, flat/vector style (ahana-hero-illustration.dim_1200x800.png)\n- Small heart icon, simple flat style (heart-icon.dim_128x128.png)",
   "existing_features": [
     {
       "id": "feature-create-a-responsive-single-page-valentine-website-dedicated-to-the-name-ahana-with-all-user-facing-text-in-english-and-a-romantic-tone",
@@ -46,12 +51,158 @@
         "REQ-5"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-personalize-the-existing-ahana-valentine-single-page-site-to-clearly-indicate-it-is-from-suvo-to-ahana-by-updating-the-on-page-copy-e-g-hero-subtitle-tagline-and-the-love-letter-sign-off-to-include-the-sender-name-suvo-while-keeping-all-user-facing-text-in-english-and-maintaining-the-cute-romantic-tone",
+      "title": "Personalize the existing Ahana Valentine single-page site to clearly indicate it is from “Suvo” to “Ahana” by updating the on-page copy (e.g., hero subtitle/tagline and the love letter sign-off) to include the sender name “Suvo” while keeping all user-facing text in English and maintaining the cute/romantic tone.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-user-facing-copy-across-the-single-page-site-to-shift-the-tone-from-purely-valentine-romantic-to-a-cute-funny-dramatic-heartfelt-proposal-experience-while-keeping-it-clearly-addressed-to-ahana-and-clearly-from-suvo-and-keeping-all-text-in-english",
+      "title": "Update the user-facing copy across the single-page site to shift the tone from purely Valentine/romantic to a “cute + funny + dramatic + heartfelt” proposal experience, while keeping it clearly addressed to Ahana and clearly from Suvo, and keeping all text in English.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-enhance-the-closing-interaction-into-a-very-special-mini-proposal-flow-keep-a-simple-on-page-interaction-but-add-a-short-playful-multi-step-sequence-e-g-a-tiny-2-3-question-mini-quiz-or-a-dramatic-are-you-sure-beat-that-ends-in-a-celebratory-yes-outcome-message-for-ahana",
+      "title": "Enhance the closing interaction into a “very special” mini proposal flow: keep a simple on-page interaction but add a short, playful multi-step sequence (e.g., a tiny 2–3 question mini-quiz or a dramatic “Are you sure?” beat) that ends in a celebratory “Yes” outcome message for Ahana.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-new-special-surprise-section-on-the-page-with-a-simple-reveal-interaction-e-g-open-the-tiny-envelope-tap-for-a-secret-message-that-displays-a-short-funny-but-sweet-hidden-message-from-suvo-to-ahana-once-revealed",
+      "title": "Add a new “special surprise” section on the page with a simple reveal interaction (e.g., “Open the tiny envelope” / “Tap for a secret message”) that displays a short, funny-but-sweet hidden message from Suvo to Ahana once revealed.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-increase-the-cute-funny-feel-of-the-decorative-effects-by-expanding-the-existing-floating-hearts-treatment-with-small-variations-e-g-mixed-heart-sparkle-particles-and-or-a-brief-confetti-burst-on-the-final-yes-while-maintaining-performance-and-reduced-motion-accessibility",
+      "title": "Increase the “cute/funny” feel of the decorative effects by expanding the existing floating hearts treatment with small variations (e.g., mixed heart/sparkle particles and/or a brief confetti burst on the final “Yes”), while maintaining performance and reduced-motion accessibility.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-and-render-new-static-image-assets-that-support-the-proposal-vibe-e-g-a-cute-ring-icon-and-a-small-doodle-style-accent-illustration-from-frontend-public-assets-generated-and-incorporate-them-into-the-hero-cta-surprise-section-without-changing-backend-behavior",
+      "title": "Add and render new static image assets that support the “proposal” vibe (e.g., a cute ring icon and a small doodle-style accent illustration) from frontend/public/assets/generated, and incorporate them into the hero/CTA/surprise section without changing backend behavior.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-single-page-proposal-experience-for-ahana-from-suvo-fresh-layout-and-fresh-copy-replacing-the-current-valentine-page-content-while-keeping-all-user-facing-text-in-english",
+      "title": "Create a new single-page proposal experience for Ahana from Suvo (fresh layout and fresh copy), replacing the current Valentine page content while keeping all user-facing text in English.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-new-cohesive-visual-theme-distinct-from-the-current-rose-pink-valentine-aesthetic-while-staying-romantic-cute-and-playful-avoid-a-blue-purple-primary-palette-apply-the-theme-consistently-across-sections-colors-typography-spacing-cards-buttons-and-backgrounds",
+      "title": "Implement a new cohesive visual theme distinct from the current rose/pink Valentine aesthetic, while staying romantic, cute, and playful (avoid a blue/purple primary palette). Apply the theme consistently across sections (colors, typography, spacing, cards, buttons, and backgrounds).",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-playful-multi-step-proposal-interaction-at-the-end-of-the-page-2-4-steps-that-includes-at-least-one-humorous-beat-and-ends-in-a-celebratory-yes-outcome-addressed-to-ahana-and-signed-attributed-to-suvo",
+      "title": "Add a playful, multi-step proposal interaction at the end of the page (2–4 steps) that includes at least one humorous beat and ends in a celebratory “Yes” outcome addressed to Ahana and signed/attributed to Suvo.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-special-surprise-section-with-a-simple-reveal-interaction-e-g-opening-an-envelope-tapping-a-secret-that-shows-a-short-hidden-message-from-suvo-to-ahana-when-revealed",
+      "title": "Add a “special surprise” section with a simple reveal interaction (e.g., opening an envelope / tapping a secret) that shows a short hidden message from Suvo to Ahana when revealed.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-upgrade-decorative-effects-to-feel-cuter-funnier-than-the-current-floating-hearts-by-mixing-multiple-lightweight-particles-e-g-hearts-sparkles-and-add-a-brief-confetti-burst-on-the-final-successful-yes-while-respecting-reduced-motion-accessibility",
+      "title": "Upgrade decorative effects to feel cuter/funnier than the current floating hearts by mixing multiple lightweight particles (e.g., hearts + sparkles) and add a brief confetti burst on the final successful “Yes”, while respecting reduced-motion accessibility.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-html-document-metadata-title-and-description-to-match-the-new-proposal-site-ahana-suvo-rather-than-the-current-valentine-wording",
+      "title": "Update the HTML document metadata (title and description) to match the new proposal site (Ahana + Suvo) rather than the current Valentine wording.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-new-generated-static-image-assets-from-frontend-public-assets-generated-to-support-the-new-proposal-theme-and-render-them-in-the-new-page-no-backend-image-serving",
+      "title": "Add new generated static image assets (from frontend/public/assets/generated) to support the new proposal theme and render them in the new page (no backend image serving).",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-proposal-page-ui-with-a-brand-new-simple-cute-single-page-proposal-experience-addressed-to-ahana-and-clearly-from-suvo-with-minimal-sections-hero-short-message-photos-proposal-moment-and-all-user-facing-text-in-english",
+      "title": "Replace the current proposal page UI with a brand-new, simple, cute single-page proposal experience addressed to “Ahana” and clearly from “Suvo”, with minimal sections (hero + short message + photos + proposal moment) and all user-facing text in English.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-incorporate-the-user-s-uploaded-photos-into-the-new-page-by-selecting-the-best-2-unique-images-from-img-3752-jpeg-img-3753-jpeg-img-3752-1-jpeg-img-3753-1-jpeg-add-the-chosen-2-as-static-frontend-assets-and-render-them-on-the-page-e-g-one-primary-hero-photo-one-secondary-photo-section",
+      "title": "Incorporate the user’s uploaded photos into the new page by selecting the best 2 unique images from: IMG_3752.jpeg, IMG_3753.jpeg, IMG_3752-1.jpeg, IMG_3753-1.jpeg; add the chosen 2 as static frontend assets and render them on the page (e.g., one primary hero photo + one secondary photo section).",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-simple-cute-proposal-interaction-at-the-end-of-the-page-single-step-or-at-most-two-steps-that-culminates-in-a-celebratory-yes-outcome-for-ahana-signed-attributed-to-suvo-and-optionally-triggers-a-lightweight-celebration-effect-that-respects-prefers-reduced-motion",
+      "title": "Implement a simple, cute proposal interaction at the end of the page (single-step or at most two steps) that culminates in a celebratory “Yes” outcome for Ahana, signed/attributed to Suvo, and optionally triggers a lightweight celebration effect that respects prefers-reduced-motion.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
     {
       "id": "AR-1",
       "summary": "Create a Valentine website for girlfriend named “Ahana” (romantic themed, personalized).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Update the site tone/content to be a funny + cute + romantic proposal experience (mix of playful, dramatic, and heartfelt elements) from Suvo to Ahana.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create a brand-new (from-scratch) special proposal website for Ahana from Suvo (not a modification of the existing site).",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Incorporate the user’s uploaded couple photos into the new simple cute proposal site, selecting the best 2 from the provided similar images.",
       "reqIds": [],
       "status": "pending"
     }

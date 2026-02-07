@@ -2,12 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-responsive-single-page-valentine-website-dedicated-to-the-name-ahana-with-all-user-facing-text-in-english-and-a-romantic-tone",
-      "featureTitle": "Create a responsive, single-page Valentine website dedicated to the name “Ahana”, with all user-facing text in English and a romantic tone.",
+      "featureId": "feature-replace-the-current-proposal-page-ui-with-a-brand-new-simple-cute-single-page-proposal-experience-addressed-to-ahana-and-clearly-from-suvo-with-minimal-sections-hero-short-message-photos-proposal-moment-and-all-user-facing-text-in-english",
+      "featureTitle": "Replace the current proposal page UI with a brand-new, simple, cute single-page proposal experience addressed to “Ahana” and clearly from “Suvo”, with minimal sections (hero + short message + photos + proposal moment) and all user-facing text in English.",
       "files": [
         "frontend/index.html",
-        "frontend/src/App.tsx",
-        "frontend/src/pages/AhanaValentinePage.tsx"
+        "frontend/src/pages/AhanaProposalPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -17,17 +16,15 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-1"
+        "REQ-19"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-implement-a-coherent-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-valentine-love-letter-aesthetic-applied-consistently-across-the-page-avoid-a-blue-purple-primary-palette",
-      "featureTitle": "Implement a coherent visual theme (colors, typography, spacing, and component styling) suitable for a Valentine/love-letter aesthetic, applied consistently across the page (avoid a blue/purple primary palette).",
+      "featureId": "feature-incorporate-the-user-s-uploaded-photos-into-the-new-page-by-selecting-the-best-2-unique-images-from-img-3752-jpeg-img-3753-jpeg-img-3752-1-jpeg-img-3753-1-jpeg-add-the-chosen-2-as-static-frontend-assets-and-render-them-on-the-page-e-g-one-primary-hero-photo-one-secondary-photo-section",
+      "featureTitle": "Incorporate the user’s uploaded photos into the new page by selecting the best 2 unique images from: IMG_3752.jpeg, IMG_3753.jpeg, IMG_3752-1.jpeg, IMG_3753-1.jpeg; add the chosen 2 as static frontend assets and render them on the page (e.g., one primary hero photo + one secondary photo section).",
       "files": [
-        "frontend/src/index.css",
-        "frontend/src/pages/AhanaValentinePage.tsx",
-        "frontend/tailwind.config.js"
+        "frontend/src/pages/AhanaProposalPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -37,16 +34,16 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-2"
+        "REQ-20"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-core-sections-to-the-page-1-hero-banner-2-short-love-note-letter-3-reasons-i-love-you-list-static-and-4-a-closing-call-to-action-section-such-as-will-you-be-my-valentine-with-simple-on-page-interaction-no-authentication",
-      "featureTitle": "Add core sections to the page: (1) Hero banner, (2) Short love note/letter, (3) “Reasons I love you” list (static), and (4) A closing call-to-action section such as “Will you be my Valentine?” with simple on-page interaction (no authentication).",
+      "featureId": "feature-implement-a-simple-cute-proposal-interaction-at-the-end-of-the-page-single-step-or-at-most-two-steps-that-culminates-in-a-celebratory-yes-outcome-for-ahana-signed-attributed-to-suvo-and-optionally-triggers-a-lightweight-celebration-effect-that-respects-prefers-reduced-motion",
+      "featureTitle": "Implement a simple, cute proposal interaction at the end of the page (single-step or at most two steps) that culminates in a celebratory “Yes” outcome for Ahana, signed/attributed to Suvo, and optionally triggers a lightweight celebration effect that respects prefers-reduced-motion.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/pages/AhanaValentinePage.tsx"
+        "frontend/src/components/SimpleProposalMoment.tsx",
+        "frontend/src/pages/AhanaProposalPage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -56,45 +53,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-lightweight-decorative-animations-suitable-for-the-theme-e-g-floating-hearts-or-subtle-sparkles-that-respect-performance-and-accessibility-provide-a-way-to-reduce-motion-if-the-user-prefers-reduced-motion",
-      "featureTitle": "Add lightweight decorative animations suitable for the theme (e.g., floating hearts or subtle sparkles) that respect performance and accessibility (provide a way to reduce motion if the user prefers reduced motion).",
-      "files": [
-        "frontend/src/components/FloatingHearts.tsx",
-        "frontend/src/index.css",
-        "frontend/src/pages/AhanaValentinePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-required-static-image-assets-to-the-project-and-render-them-on-the-page-from-frontend-public-assets-generated-do-not-serve-images-via-the-backend",
-      "featureTitle": "Add required static image assets to the project and render them on the page from frontend/public/assets/generated (do not serve images via the backend).",
-      "files": [
-        "frontend/src/pages/AhanaValentinePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
+        "REQ-21"
       ],
       "confidence": "high"
     }

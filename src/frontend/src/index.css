@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,79 +6,92 @@
 
 @layer base {
     :root {
-        --radius: 1rem;
+        --radius: 1.5rem;
         
-        /* Valentine color palette - light mode */
-        --background: 0.98 0.02 15;
-        --foreground: 0.25 0.05 15;
+        /* Warm peach/coral/sunset palette - light mode */
+        --background: 0.98 0.02 45;
+        --foreground: 0.25 0.04 30;
         
-        --card: 1 0.01 15;
-        --card-foreground: 0.25 0.05 15;
+        --card: 1 0.01 45;
+        --card-foreground: 0.25 0.04 30;
         
-        --popover: 1 0.01 15;
-        --popover-foreground: 0.25 0.05 15;
+        --popover: 1 0.01 45;
+        --popover-foreground: 0.25 0.04 30;
         
-        --primary: 0.55 0.18 15;
-        --primary-foreground: 0.98 0.01 15;
+        --primary: 0.65 0.16 35;
+        --primary-foreground: 0.98 0.01 45;
         
-        --secondary: 0.95 0.03 15;
-        --secondary-foreground: 0.35 0.05 15;
+        --secondary: 0.95 0.03 45;
+        --secondary-foreground: 0.35 0.04 30;
         
-        --muted: 0.96 0.02 15;
-        --muted-foreground: 0.50 0.04 15;
+        --muted: 0.96 0.02 45;
+        --muted-foreground: 0.55 0.03 30;
         
-        --accent: 0.92 0.04 15;
-        --accent-foreground: 0.35 0.05 15;
+        --accent: 0.92 0.04 40;
+        --accent-foreground: 0.35 0.04 30;
         
         --destructive: 0.55 0.22 25;
-        --destructive-foreground: 0.98 0.01 15;
+        --destructive-foreground: 0.98 0.01 45;
         
-        --border: 0.90 0.03 15;
-        --input: 0.90 0.03 15;
-        --ring: 0.55 0.18 15;
+        --border: 0.88 0.04 40;
+        --input: 0.88 0.04 40;
+        --ring: 0.65 0.16 35;
         
-        --chart-1: 0.60 0.20 15;
-        --chart-2: 0.65 0.15 340;
-        --chart-3: 0.70 0.12 30;
-        --chart-4: 0.55 0.18 350;
-        --chart-5: 0.75 0.10 20;
+        /* Custom theme colors */
+        --peach-light: 0.96 0.03 45;
+        --peach-dark: 0.22 0.05 35;
+        --peach-accent: 0.70 0.14 40;
+        --peach-accent-light: 0.80 0.12 40;
+        --peach-border: 0.88 0.04 40;
+        --peach-border-dark: 0.30 0.06 35;
+        --peach-card-dark: 0.25 0.05 35;
+        
+        --coral-light: 0.94 0.04 30;
+        --coral-dark: 0.20 0.06 30;
+        --coral-accent: 0.62 0.18 25;
+        --coral-accent-light: 0.75 0.15 25;
+        --coral-border: 0.86 0.05 30;
+        --coral-border-dark: 0.28 0.07 30;
+        --coral-card-dark: 0.23 0.06 30;
+        
+        --sunset-light: 0.92 0.05 50;
+        --sunset-dark: 0.18 0.07 50;
+        --sunset-accent: 0.68 0.16 50;
+        --sunset-accent-light: 0.78 0.14 50;
+        --sunset-border: 0.84 0.06 50;
+        --sunset-border-dark: 0.26 0.08 50;
+        --sunset-card-dark: 0.21 0.07 50;
     }
 
     .dark {
-        /* Valentine color palette - dark mode */
-        --background: 0.20 0.04 15;
-        --foreground: 0.95 0.02 15;
+        /* Warm peach/coral/sunset palette - dark mode */
+        --background: 0.18 0.05 35;
+        --foreground: 0.95 0.02 45;
         
-        --card: 0.25 0.05 15;
-        --card-foreground: 0.95 0.02 15;
+        --card: 0.22 0.06 35;
+        --card-foreground: 0.95 0.02 45;
         
-        --popover: 0.22 0.05 15;
-        --popover-foreground: 0.95 0.02 15;
+        --popover: 0.20 0.06 35;
+        --popover-foreground: 0.95 0.02 45;
         
-        --primary: 0.75 0.15 15;
-        --primary-foreground: 0.20 0.04 15;
+        --primary: 0.75 0.14 35;
+        --primary-foreground: 0.18 0.05 35;
         
-        --secondary: 0.30 0.05 15;
-        --secondary-foreground: 0.95 0.02 15;
+        --secondary: 0.28 0.06 35;
+        --secondary-foreground: 0.95 0.02 45;
         
-        --muted: 0.30 0.05 15;
-        --muted-foreground: 0.65 0.04 15;
+        --muted: 0.28 0.06 35;
+        --muted-foreground: 0.70 0.03 35;
         
-        --accent: 0.35 0.06 15;
-        --accent-foreground: 0.95 0.02 15;
+        --accent: 0.32 0.07 35;
+        --accent-foreground: 0.95 0.02 45;
         
         --destructive: 0.60 0.20 25;
-        --destructive-foreground: 0.95 0.02 15;
+        --destructive-foreground: 0.95 0.02 45;
         
-        --border: 0.30 0.05 15;
-        --input: 0.30 0.05 15;
-        --ring: 0.65 0.12 15;
-        
-        --chart-1: 0.65 0.18 15;
-        --chart-2: 0.70 0.14 340;
-        --chart-3: 0.75 0.10 30;
-        --chart-4: 0.60 0.16 350;
-        --chart-5: 0.80 0.08 20;
+        --border: 0.28 0.06 35;
+        --input: 0.28 0.06 35;
+        --ring: 0.70 0.12 35;
     }
 
     * {
@@ -87,40 +100,92 @@
     
     body {
         @apply bg-background text-foreground;
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Quicksand', sans-serif;
     }
     
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Playfair Display', serif;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+    }
+    
+    .font-display {
+        font-family: 'Pacifico', cursive;
     }
 }
 
 @layer utilities {
-    /* Floating hearts animation */
-    @keyframes float {
+    /* Floating particle animation */
+    @keyframes float-particle {
         0% {
-            transform: translateY(0) rotate(0deg);
+            transform: translateY(0) translateX(0) rotate(0deg);
             opacity: 0;
         }
         10% {
-            opacity: 0.6;
+            opacity: 0.7;
         }
         90% {
-            opacity: 0.6;
+            opacity: 0.7;
         }
         100% {
-            transform: translateY(-100vh) rotate(360deg);
+            transform: translateY(-110vh) translateX(30px) rotate(360deg);
             opacity: 0;
         }
     }
     
-    .animate-float {
-        animation: float linear infinite;
+    .animate-float-particle {
+        animation: float-particle linear infinite;
+    }
+    
+    /* Gentle float for hero image */
+    @keyframes gentle-float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+    
+    .animate-gentle-float {
+        animation: gentle-float 4s ease-in-out infinite;
+    }
+    
+    /* Slow spin for ring icons */
+    @keyframes spin-slow {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    .animate-spin-slow {
+        animation: spin-slow 8s linear infinite;
+    }
+    
+    /* Confetti fall animation */
+    @keyframes confetti-fall {
+        0% {
+            transform: translateY(-10vh) rotate(0deg);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(110vh) rotate(720deg);
+            opacity: 0;
+        }
+    }
+    
+    .animate-confetti-fall {
+        animation: confetti-fall ease-in forwards;
     }
     
     /* Respect reduced motion preferences */
     @media (prefers-reduced-motion: reduce) {
-        .animate-float,
+        .animate-float-particle,
+        .animate-gentle-float,
+        .animate-spin-slow,
+        .animate-confetti-fall,
         .animate-pulse {
             animation: none;
         }

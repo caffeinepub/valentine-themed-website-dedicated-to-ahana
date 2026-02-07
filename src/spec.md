@@ -1,13 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Create a responsive, single-page Valentine-themed website dedicated to “Ahana” with romantic English copy, consistent love-letter styling, and lightweight decorative animation.
+**Goal:** Replace the current proposal page with a brand-new, simple, cute single-page proposal experience in English, addressed to Ahana and clearly from Suvo, using the best 2 uploaded photos.
 
 **Planned changes:**
-- Build a responsive single-page layout with four sections: Hero (prominent “Ahana”), Love note/letter, “Reasons I love you” (static list with 5+ items), and a closing “Will you be my Valentine?” call-to-action.
-- Apply a cohesive Valentine/love-letter visual theme (colors, typography, spacing, component styling) avoiding a blue/purple-dominant palette and ensuring readable contrast.
-- Add a simple on-page interaction in the closing section (e.g., buttons/toggle) that updates UI state locally with no authentication.
-- Add lightweight decorative animations (e.g., floating hearts/sparkles) and respect `prefers-reduced-motion` to reduce/disable motion when requested.
-- Add and render required static image assets from `frontend/public/assets/generated` (no backend image serving).
+- Redesign the proposal UI into a minimal single-page layout (hero + short message + photos + proposal moment) with a warm, cute aesthetic (avoid a blue/purple primary palette).
+- Select exactly two best-looking unique photos from the four uploads and add them as static frontend assets; render them responsively with sensible cropping and non-identifying descriptive alt text.
+- Add a simple proposal interaction (one step, or at most two) that ends with a celebratory “Yes” outcome addressed to Ahana and attributed to Suvo, with an optional lightweight celebration effect that respects prefers-reduced-motion.
 
-**User-visible outcome:** Visitors can scroll through a romantic Valentine page for Ahana, read a love note and reasons list, see themed visuals/animations (with reduced-motion support), and interact with a “Will you be my Valentine?” prompt that updates on-page.
+**User-visible outcome:** Visitors see a clean, cute proposal page from Suvo to Ahana featuring two photos and a simple “Yes” moment with a small celebration (reduced/disabled if motion reduction is enabled).

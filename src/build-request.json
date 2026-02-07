@@ -1,118 +1,89 @@
 {
   "kind": "build_request",
-  "title": "Valentine-themed website dedicated to Ahana",
+  "title": "Build a brand-new simple cute proposal page using the best 2 uploaded photos",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a responsive, single-page Valentine website dedicated to the name “Ahana”, with all user-facing text in English and a romantic tone.",
+      "id": "REQ-19",
+      "text": "Replace the current proposal page UI with a brand-new, simple, cute single-page proposal experience addressed to “Ahana” and clearly from “Suvo”, with minimal sections (hero + short message + photos + proposal moment) and all user-facing text in English.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "Make a website for my gf name “ahana” for velentine"
+          "Yup brand new cute simple proposal web and use these pics and make it special cute"
         ]
       },
       "acceptanceCriteria": [
-        "Homepage renders without errors on desktop and mobile widths.",
-        "The name “Ahana” is prominently displayed in the hero section.",
-        "All visible text is in English.",
-        "Content and visuals clearly communicate a Valentine/romantic theme."
+        "The app renders a single-page proposal experience that is visibly simpler than the current multi-section page (no long story/reasons/surprise sections unless explicitly kept minimal).",
+        "All visible text is in English and clearly indicates it is from Suvo to Ahana.",
+        "The page is responsive across mobile and desktop and maintains a cute, warm aesthetic (avoid a blue/purple primary palette)."
       ]
     },
     {
-      "id": "REQ-2",
-      "text": "Implement a coherent visual theme (colors, typography, spacing, and component styling) suitable for a Valentine/love-letter aesthetic, applied consistently across the page (avoid a blue/purple primary palette).",
+      "id": "REQ-20",
+      "text": "Incorporate the user’s uploaded photos into the new page by selecting the best 2 unique images from: IMG_3752.jpeg, IMG_3753.jpeg, IMG_3752-1.jpeg, IMG_3753-1.jpeg; add the chosen 2 as static frontend assets and render them on the page (e.g., one primary hero photo + one secondary photo section).",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "Make a website for my gf name “ahana” for velentine"
+          "Yup just make it cute and use 2 photos they are similar so chose the better 2"
         ]
       },
       "acceptanceCriteria": [
-        "A single, consistent theme is used across all sections (typography + color palette + spacing).",
-        "Primary styling is not based on blue/purple as the dominant palette.",
-        "UI remains readable with sufficient contrast for text on backgrounds."
+        "Exactly two of the four uploaded images are used on the page (the best-looking two unique photos are selected).",
+        "The selected photos are stored as static assets in the frontend (not served via the backend) and are referenced by their filenames.",
+        "Images are displayed responsively with sensible cropping (object-fit) and include non-identifying, descriptive alt text (e.g., “A cozy couple photo”)."
       ]
     },
     {
-      "id": "REQ-3",
-      "text": "Add core sections to the page: (1) Hero banner, (2) Short love note/letter, (3) “Reasons I love you” list (static), and (4) A closing call-to-action section such as “Will you be my Valentine?” with simple on-page interaction (no authentication).",
+      "id": "REQ-21",
+      "text": "Implement a simple, cute proposal interaction at the end of the page (single-step or at most two steps) that culminates in a celebratory “Yes” outcome for Ahana, signed/attributed to Suvo, and optionally triggers a lightweight celebration effect that respects prefers-reduced-motion.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "Make a website for my gf name “ahana” for velentine"
+          "Make the web now",
+          "Build it"
         ]
       },
       "acceptanceCriteria": [
-        "All four sections are present and reachable by scrolling.",
-        "The “Reasons I love you” list displays at least 5 items.",
-        "The closing section includes a simple interaction (e.g., buttons or toggle) that updates the UI state locally in the browser."
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Add lightweight decorative animations suitable for the theme (e.g., floating hearts or subtle sparkles) that respect performance and accessibility (provide a way to reduce motion if the user prefers reduced motion).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Make a website for my gf name “ahana” for velentine"
-        ]
-      },
-      "acceptanceCriteria": [
-        "At least one decorative animation is visible on the page.",
-        "If the OS/browser prefers-reduced-motion setting is enabled, animations are reduced/disabled appropriately.",
-        "Animation does not significantly degrade scrolling or interaction responsiveness."
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Add required static image assets to the project and render them on the page from frontend/public/assets/generated (do not serve images via the backend).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-1"
-        ],
-        "quotes": [
-          "Make a website for my gf name “ahana” for velentine"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Generated images are placed under frontend/public/assets/generated.",
-        "The homepage renders and displays the generated assets (e.g., hero background/illustration and a small decorative icon).",
-        "No backend endpoints are used for image delivery."
+        "The proposal interaction is simpler than the existing multi-step flow (no more than two steps).",
+        "On “Yes”, the UI shows a clear celebration message addressed to Ahana and attributed to Suvo.",
+        "If any animation is used (e.g., confetti/particles), it is disabled/reduced when prefers-reduced-motion is enabled."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/components/ui (compose them instead).",
-    "Do not edit immutable hook files: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx.",
-    "Backend must remain a single Motoko actor (no additional backend services)."
+    "Do not modify files under frontend/src/components/ui (compose existing UI components instead).",
+    "Do not modify any immutable frontend hook/bootstrap paths listed in SYSTEM_CONTEXT.",
+    "Do not introduce backend changes; keep backend/main.mo as-is and do not add persistence or authentication requirements.",
+    "Do not serve images via the backend; use static frontend assets.",
+    "All user-facing text must be English."
   ],
   "nonGoals": [
-    "Internet Identity login or any third-party authentication.",
-    "User accounts, admin panels, or content management.",
-    "Payments, donations, or external API integrations.",
-    "Real-time features (websockets/chat) or push/email notifications.",
-    "Collecting or storing personal data on the backend."
+    "Adding Internet Identity login/logout or any authentication flow.",
+    "Adding a database or storing proposal responses server-side.",
+    "Building multi-page routing; keep it a single-page experience.",
+    "Integrating third-party services or APIs."
   ],
   "imageRequirements": {
-    "required": [
-      "Romantic heart-pattern background with soft gradients (ahana-bg.dim_1920x1080.png)",
-      "Cute Valentine-themed envelope-and-heart illustration, flat/vector style (ahana-hero-illustration.dim_1200x800.png)",
-      "Small heart icon, simple flat style (heart-icon.dim_128x128.png)"
-    ],
+    "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

@@ -1,7 +1,7 @@
-import AhanaValentinePage from './pages/AhanaValentinePage';
+import AhanaProposalPage from './pages/AhanaProposalPage';
 
 function App() {
-  return <AhanaValentinePage />;
+  return <AhanaProposalPage />;
 }
 
 export default App;
