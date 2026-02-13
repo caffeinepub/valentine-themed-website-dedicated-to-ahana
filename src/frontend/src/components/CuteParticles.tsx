@@ -1,63 +1,39 @@
-import { useEffect, useState } from 'react';
-
-interface Particle {
-  id: number;
-  type: 'heart' | 'sparkle';
-  left: number;
-  delay: number;
-  duration: number;
-  size: number;
-}
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 
 export default function CuteParticles() {
-  const [particles, setParticles] = useState<Particle[]>([]);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-
-  useEffect(() => {
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    const handleChange = (e: MediaQueryListEvent) => {
-      setPrefersReducedMotion(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-
-    // Generate mixed particles (hearts and sparkles)
-    const newParticles: Particle[] = Array.from({ length: 20 }, (_, i) => ({
-      id: i,
-      type: i % 3 === 0 ? 'sparkle' : 'heart',
-      left: Math.random() * 100,
-      delay: Math.random() * 8,
-      duration: 10 + Math.random() * 6,
-      size: 16 + Math.random() * 16
-    }));
-    setParticles(newParticles);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleChange);
-    };
-  }, []);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
   if (prefersReducedMotion) {
     return null;
   }
 
+  const particles = Array.from({ length: 20 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 3}s`,
+    duration: `${1.5 + Math.random() * 1.5}s`,
+    size: `${12 + Math.random() * 12}px`,
+    emoji: ['✨', '⭐', '💫', '🌟'][Math.floor(Math.random() * 4)]
+  }));
+
   return (
-    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className="absolute bottom-0 animate-float-particle opacity-40"
+          className="absolute animate-sparkle"
           style={{
-            left: `${particle.left}%`,
-            animationDelay: `${particle.delay}s`,
-            animationDuration: `${particle.duration}s`,
-            fontSize: `${particle.size}px`
+            left: particle.left,
+            top: particle.top,
+            animationDelay: particle.delay,
+            animationDuration: particle.duration,
+            fontSize: particle.size,
+            // @ts-ignore - CSS custom properties
+            '--duration': particle.duration
           }}
         >
-          {particle.type === 'heart' ? '💛' : '✨'}
+          {particle.emoji}
         </div>
       ))}
     </div>

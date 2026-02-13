@@ -1,62 +1,139 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-07T21:36:39.289Z",
+  "generatedAt": "2026-02-13T16:23:52.078Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
+    "total": 7,
+    "implemented": 7,
     "items": [
       {
-        "id": "REQ-23",
-        "summary": "Remove all photo usage from the current single-page site and make the Valentine/proposal experience completely text-only (do not display any uploaded images, including IMG_5979.jpeg, and remove all <img> references such as /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg).",
+        "id": "REQ-1",
+        "summary": "Replace the current Isabella voice companion landing experience with a dedicated Valentine website page for Ahana from Suvo, making this Valentine page the default rendered route in the app.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/AhanaProposalPage.tsx",
-          "frontend/src/components/CuteParticles.tsx"
+          "frontend/src/App.tsx",
+          "frontend/src/pages/AhanaValentinePage.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/AhanaProposalPage.tsx",
-          "frontend/src/components/CuteParticles.tsx"
+          "frontend/src/App.tsx",
+          "frontend/src/pages/AhanaValentinePage.tsx"
         ]
       },
       {
-        "id": "REQ-24",
-        "summary": "Ensure the app renders a simple, cute, Valentine-themed single-page message for Ahana that is clearly from Suvo, keeping all user-facing text in English and aligning the layout/content with the earlier ‘first web’ Valentine style (hero + short love note/letter + reasons list + closing CTA).",
+        "id": "REQ-2",
+        "summary": "Ensure the names “Ahana” and “Suvo” appear together throughout the Valentine website (e.g., headers, love note, CTA text, success/celebration state, and any repeating labels), using consistent formatting (for example: “Ahana & Suvo”).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/pages/AhanaProposalPage.tsx"
+          "frontend/src/pages/AhanaValentinePage.tsx",
+          "frontend/src/components/ProposalStepFlow.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/pages/AhanaProposalPage.tsx"
+          "frontend/src/pages/AhanaValentinePage.tsx",
+          "frontend/src/components/ProposalStepFlow.tsx"
         ]
       },
       {
-        "id": "REQ-25",
-        "summary": "Update the closing interaction copy to be Valentine-focused (e.g., “Ahana, will you be my Valentine?”) and keep the interaction simple (single-step or at most two steps) with an optional lightweight celebration effect that respects prefers-reduced-motion.",
+        "id": "REQ-3",
+        "summary": "Implement cute/pretty Valentine animations and “cute gestures” on the Valentine website, including at minimum: a floating hearts layer, a sparkles/particles layer, and a celebratory effect when the user accepts (e.g., confetti burst). All animations must respect the user’s “prefers-reduced-motion” setting by significantly reducing or disabling motion.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/SimpleProposalMoment.tsx",
-          "frontend/src/pages/AhanaProposalPage.tsx"
+          "frontend/src/components/FloatingHearts.tsx",
+          "frontend/src/components/CuteParticles.tsx",
+          "frontend/src/components/ConfettiBurst.tsx",
+          "frontend/src/pages/AhanaValentinePage.tsx"
         ],
         "matchedFiles": [
+          "frontend/src/components/FloatingHearts.tsx",
+          "frontend/src/components/CuteParticles.tsx",
+          "frontend/src/components/ConfettiBurst.tsx",
+          "frontend/src/pages/AhanaValentinePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Add an interactive Valentine proposal moment/flow on the Valentine website that culminates in a clear “Yes” acceptance outcome and shows a personalized success message that includes both “Ahana” and “Suvo”. Include at least one playful micro-interaction (“cute gesture”), such as a button hover reaction, a short step-by-step reveal, or a small surprise reveal section.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/ProposalStepFlow.tsx",
+          "frontend/src/components/SurpriseReveal.tsx",
           "frontend/src/components/SimpleProposalMoment.tsx",
-          "frontend/src/pages/AhanaProposalPage.tsx"
+          "frontend/src/pages/AhanaValentinePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/ProposalStepFlow.tsx",
+          "frontend/src/components/SurpriseReveal.tsx",
+          "frontend/src/components/SimpleProposalMoment.tsx",
+          "frontend/src/pages/AhanaValentinePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Provide a theme/style selector on the Valentine website that lets the user switch between these four visual styles: (1) cute pink hearts everywhere, (2) floating hearts + sparkles, (3) anime theme, and (4) elegant romantic red theme. Theme changes should update colors/typography/decoration consistently across the page.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/AhanaValentinePage.tsx",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/AhanaValentinePage.tsx",
+          "frontend/src/index.css"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Establish and apply a coherent Valentine visual design system across the Valentine website (colors, typography, spacing, buttons, cards/sections) with a cute romantic aesthetic (avoid blue/purple by default). Keep all user-facing text in English.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/pages/AhanaValentinePage.tsx",
+          "frontend/public/assets/generated/ahana-bg.dim_1920x1080.png",
+          "frontend/public/assets/generated/ahana-hero-illustration.dim_1200x800.png",
+          "frontend/public/assets/generated/chibi-couple.dim_900x600.png",
+          "frontend/public/assets/generated/envelope-illustration.dim_900x600.png",
+          "frontend/public/assets/generated/confetti-doodle.dim_1200x400.png",
+          "frontend/public/assets/generated/heart-icon.dim_128x128.png",
+          "frontend/public/assets/generated/ring-icon.dim_256x256.png",
+          "frontend/public/assets/generated/sparkle-particles.dim_256x256.png"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/src/pages/AhanaValentinePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Update the document title and meta description in the HTML entry point to reflect the Valentine website for Ahana & Suvo (instead of Isabella branding).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/index.html"
+        ],
+        "matchedFiles": [
+          "frontend/index.html"
         ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
+    "caffeine.lock.json",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ConfettiBurst.tsx",
     "frontend/src/components/CuteParticles.tsx",
+    "frontend/src/components/FloatingHearts.tsx",
+    "frontend/src/components/ProposalStepFlow.tsx",
     "frontend/src/components/SimpleProposalMoment.tsx",
-    "frontend/src/pages/AhanaProposalPage.tsx",
+    "frontend/src/components/SurpriseReveal.tsx",
+    "frontend/src/index.css",
+    "frontend/src/pages/AhanaValentinePage.tsx",
+    "frontend/tailwind.config.js",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

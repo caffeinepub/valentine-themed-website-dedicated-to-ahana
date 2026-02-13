@@ -1,98 +1,111 @@
 import { useState } from 'react';
-import { Heart, Sparkles } from 'lucide-react';
+import { Heart } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import ConfettiBurst from './ConfettiBurst';
 
-type Step = 'ask' | 'celebration';
-
 export default function SimpleProposalMoment() {
-  const [step, setStep] = useState<Step>('ask');
-  const [showConfetti, setShowConfetti] = useState(false);
+  const [response, setResponse] = useState<'none' | 'yes' | 'no'>('none');
+  const [noButtonPosition, setNoButtonPosition] = useState({ x: 0, y: 0 });
+  const [noAttempts, setNoAttempts] = useState(0);
 
   const handleYes = () => {
-    setStep('celebration');
-    setShowConfetti(true);
+    setResponse('yes');
   };
 
-  const handleReset = () => {
-    setStep('ask');
-    setShowConfetti(false);
+  const handleNoHover = () => {
+    setNoAttempts(prev => prev + 1);
+    const randomX = Math.random() * 200 - 100;
+    const randomY = Math.random() * 200 - 100;
+    setNoButtonPosition({ x: randomX, y: randomY });
   };
+
+  if (response === 'yes') {
+    return (
+      <>
+        <ConfettiBurst />
+        <Card className="max-w-2xl mx-auto bg-card/95 backdrop-blur shadow-glow-lg border-2 border-primary">
+          <CardHeader className="text-center space-y-4">
+            <div className="flex justify-center">
+              <img 
+                src="/assets/generated/ring-icon.dim_256x256.png"
+                alt="Ring"
+                className="w-24 h-24 animate-gentle-pulse"
+              />
+            </div>
+            <CardTitle className="text-3xl sm:text-4xl font-script text-primary">
+              Yes! 🎉
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-center space-y-6">
+            <p className="text-xl sm:text-2xl font-display">
+              Ahana & Suvo - Forever Together! 💕
+            </p>
+            <p className="text-lg text-muted-foreground">
+              You've made this the best Valentine's Day ever, Ahana!
+              I promise to cherish every moment we share together.
+            </p>
+            <p className="text-sm text-muted-foreground font-script">
+              — Suvo
+            </p>
+          </CardContent>
+        </Card>
+      </>
+    );
+  }
 
   return (
-    <>
-      {showConfetti && <ConfettiBurst />}
-      
-      <Card className="border-sunset-border dark:border-sunset-border-dark shadow-2xl bg-white/95 dark:bg-sunset-card-dark backdrop-blur-sm">
-        <CardHeader className="text-center space-y-6 pb-8">
-          <div className="flex justify-center">
-            <Heart className="w-20 h-20 text-coral-accent animate-pulse" fill="currentColor" />
+    <Card className="max-w-2xl mx-auto bg-card/95 backdrop-blur shadow-glow">
+      <CardHeader className="text-center space-y-4">
+        <div className="flex justify-center">
+          <img 
+            src="/assets/generated/heart-icon.dim_128x128.png"
+            alt="Heart"
+            className="w-20 h-20 animate-heartbeat"
+          />
+        </div>
+        <CardTitle className="text-3xl sm:text-5xl font-script text-primary">
+          Ahana, will you be my Valentine?
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="text-center space-y-6">
+        <p className="text-lg sm:text-xl text-muted-foreground">
+          You mean everything to me, Ahana. Let's make this Valentine's Day unforgettable!
+          Ahana & Suvo, together forever! 💕
+        </p>
+        <div className="relative min-h-[120px] flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button 
+              size="lg"
+              onClick={handleYes}
+              className="text-lg px-8 py-6 shadow-glow hover:shadow-glow-lg transition-all"
+            >
+              <Heart className="w-5 h-5 mr-2" fill="currentColor" />
+              Yes! 💖
+            </Button>
+            <Button 
+              size="lg"
+              variant="outline"
+              onMouseEnter={handleNoHover}
+              onTouchStart={handleNoHover}
+              className="text-lg px-8 py-6 transition-all"
+              style={{
+                transform: `translate(${noButtonPosition.x}px, ${noButtonPosition.y}px)`,
+                transition: 'transform 0.3s ease-out'
+              }}
+            >
+              No
+            </Button>
           </div>
-          <CardTitle className="text-4xl md:text-5xl text-coral-accent dark:text-coral-accent-light font-display leading-tight">
-            {step === 'ask' && 'Ahana, Will You Be My Valentine?'}
-            {step === 'celebration' && 'She Said Yes! 🎉'}
-          </CardTitle>
-        </CardHeader>
-        
-        <CardContent className="space-y-8">
-          {step === 'ask' && (
-            <div className="space-y-8">
-              <p className="text-center text-xl md:text-2xl text-foreground leading-relaxed font-medium">
-                I promise to make you smile every day, support your dreams, 
-                and be your partner in every adventure. 
-              </p>
-              <p className="text-center text-lg text-muted-foreground italic">
-                What do you say? 💛
-              </p>
-              <div className="flex justify-center pt-4">
-                <Button
-                  size="lg"
-                  onClick={handleYes}
-                  className="text-3xl px-20 py-10 bg-gradient-to-r from-coral-accent to-sunset-accent hover:from-coral-accent/90 hover:to-sunset-accent/90 text-white shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 rounded-3xl"
-                >
-                  <Sparkles className="w-10 h-10 mr-4" />
-                  Yes! 💛
-                  <Sparkles className="w-10 h-10 ml-4" />
-                </Button>
-              </div>
-            </div>
-          )}
-
-          {step === 'celebration' && (
-            <div className="space-y-8 animate-in fade-in zoom-in duration-700">
-              <div className="text-center text-8xl mb-6">🎉💛✨🎊💕</div>
-              <div className="space-y-6 text-center">
-                <p className="text-4xl font-bold text-coral-accent dark:text-coral-accent-light font-display">
-                  Ahana & Suvo
-                </p>
-                <p className="text-3xl text-sunset-accent dark:text-sunset-accent-light font-medium">
-                  Together! 💛
-                </p>
-                <p className="text-2xl text-foreground leading-relaxed max-w-2xl mx-auto pt-4">
-                  You just made me the happiest person in the world! 
-                  I can't wait for all the amazing moments ahead of us. 
-                  Thank you for saying yes, Ahana! 🥰
-                </p>
-                <div className="pt-8">
-                  <p className="text-xl text-muted-foreground italic">
-                    Now let's go celebrate! 🎉
-                  </p>
-                </div>
-              </div>
-              <div className="flex justify-center pt-6">
-                <Button
-                  variant="ghost"
-                  onClick={handleReset}
-                  className="text-lg text-muted-foreground hover:text-foreground"
-                >
-                  ← See it again
-                </Button>
-              </div>
-            </div>
-          )}
-        </CardContent>
-      </Card>
-    </>
+        </div>
+        {noAttempts > 0 && (
+          <p className="text-sm text-muted-foreground italic animate-in fade-in">
+            {noAttempts === 1 && "Hey! That button is shy... 😊"}
+            {noAttempts === 2 && "It really doesn't want to be clicked, Ahana! 😄"}
+            {noAttempts >= 3 && "You know there's only one right answer! 💕"}
+          </p>
+        )}
+      </CardContent>
+    </Card>
   );
 }

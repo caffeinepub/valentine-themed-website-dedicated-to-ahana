@@ -1,72 +1,48 @@
-import { useEffect, useState } from 'react';
-
-interface ConfettiPiece {
-  id: number;
-  left: number;
-  delay: number;
-  duration: number;
-  rotation: number;
-  color: string;
-}
+import { usePrefersReducedMotion } from '@/hooks/usePrefersReducedMotion';
 
 export default function ConfettiBurst() {
-  const [confetti, setConfetti] = useState<ConfettiPiece[]>([]);
-  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const prefersReducedMotion = usePrefersReducedMotion();
 
-  useEffect(() => {
-    // Check for reduced motion preference
-    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setPrefersReducedMotion(mediaQuery.matches);
-
-    if (mediaQuery.matches) {
-      return;
-    }
-
-    const colors = ['#FF6B6B', '#FFD93D', '#6BCB77', '#4D96FF', '#FF8DC7'];
-    
-    // Generate confetti burst
-    const newConfetti: ConfettiPiece[] = Array.from({ length: 50 }, (_, i) => ({
-      id: i,
-      left: 20 + Math.random() * 60,
-      delay: Math.random() * 0.3,
-      duration: 2 + Math.random() * 1,
-      rotation: Math.random() * 360,
-      color: colors[Math.floor(Math.random() * colors.length)]
-    }));
-    
-    setConfetti(newConfetti);
-
-    // Clear confetti after animation
-    const timer = setTimeout(() => {
-      setConfetti([]);
-    }, 4000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (prefersReducedMotion || confetti.length === 0) {
-    return null;
+  if (prefersReducedMotion) {
+    return (
+      <div className="fixed inset-0 pointer-events-none z-50 flex items-center justify-center">
+        <div className="text-6xl">🎉</div>
+      </div>
+    );
   }
 
+  const confetti = Array.from({ length: 50 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 0.5}s`,
+    duration: `${2 + Math.random() * 2}s`,
+    color: ['#ff69b4', '#ff1493', '#ff6b9d', '#ffc0cb', '#ffb6c1', '#ff85a2'][Math.floor(Math.random() * 6)],
+    shape: ['●', '■', '▲', '★', '♥'][Math.floor(Math.random() * 5)]
+  }));
+
   return (
-    <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden" aria-hidden="true">
+    <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
       {confetti.map((piece) => (
         <div
           key={piece.id}
-          className="absolute top-0 animate-confetti-fall"
+          className="absolute -top-10 animate-confetti-fall text-2xl font-bold"
           style={{
-            left: `${piece.left}%`,
-            animationDelay: `${piece.delay}s`,
-            animationDuration: `${piece.duration}s`,
-            transform: `rotate(${piece.rotation}deg)`
+            left: piece.left,
+            animationDelay: piece.delay,
+            animationDuration: piece.duration,
+            color: piece.color,
+            // @ts-ignore - CSS custom properties
+            '--duration': piece.duration
           }}
         >
-          <div
-            className="w-3 h-3 rounded-sm"
-            style={{ backgroundColor: piece.color }}
-          />
+          {piece.shape}
         </div>
       ))}
+      <img 
+        src="/assets/generated/confetti-doodle.dim_1200x400.png"
+        alt=""
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl opacity-30 animate-gentle-pulse"
+      />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&family=Dancing+Script:wght@400;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,92 +6,116 @@
 
 @layer base {
     :root {
-        --radius: 1.5rem;
+        --radius: 1rem;
         
-        /* Warm peach/coral/sunset palette - light mode */
-        --background: 0.98 0.02 45;
-        --foreground: 0.25 0.04 30;
+        /* Romantic pink/rose palette - light mode */
+        --background: 0.98 0.02 350;
+        --foreground: 0.25 0.04 340;
         
-        --card: 1 0.01 45;
-        --card-foreground: 0.25 0.04 30;
+        --card: 1 0.01 350;
+        --card-foreground: 0.25 0.04 340;
         
-        --popover: 1 0.01 45;
-        --popover-foreground: 0.25 0.04 30;
+        --popover: 1 0.01 350;
+        --popover-foreground: 0.25 0.04 340;
         
-        --primary: 0.65 0.16 35;
-        --primary-foreground: 0.98 0.01 45;
+        --primary: 0.60 0.22 350;
+        --primary-foreground: 0.98 0.01 350;
         
-        --secondary: 0.95 0.03 45;
-        --secondary-foreground: 0.35 0.04 30;
+        --secondary: 0.92 0.04 340;
+        --secondary-foreground: 0.30 0.04 340;
         
-        --muted: 0.96 0.02 45;
-        --muted-foreground: 0.55 0.03 30;
+        --muted: 0.95 0.02 345;
+        --muted-foreground: 0.50 0.03 340;
         
-        --accent: 0.92 0.04 40;
-        --accent-foreground: 0.35 0.04 30;
+        --accent: 0.85 0.08 355;
+        --accent-foreground: 0.30 0.04 340;
         
-        --destructive: 0.55 0.22 25;
-        --destructive-foreground: 0.98 0.01 45;
+        --destructive: 0.55 0.22 15;
+        --destructive-foreground: 0.98 0.01 350;
         
-        --border: 0.88 0.04 40;
-        --input: 0.88 0.04 40;
-        --ring: 0.65 0.16 35;
+        --border: 0.90 0.04 345;
+        --input: 0.90 0.04 345;
+        --ring: 0.60 0.22 350;
         
-        /* Custom theme colors */
-        --peach-light: 0.96 0.03 45;
-        --peach-dark: 0.22 0.05 35;
-        --peach-accent: 0.70 0.14 40;
-        --peach-accent-light: 0.80 0.12 40;
-        --peach-border: 0.88 0.04 40;
-        --peach-border-dark: 0.30 0.06 35;
-        --peach-card-dark: 0.25 0.05 35;
+        --success: 0.60 0.18 150;
+        --success-foreground: 0.98 0.01 150;
         
-        --coral-light: 0.94 0.04 30;
-        --coral-dark: 0.20 0.06 30;
-        --coral-accent: 0.62 0.18 25;
-        --coral-accent-light: 0.75 0.15 25;
-        --coral-border: 0.86 0.05 30;
-        --coral-border-dark: 0.28 0.07 30;
-        --coral-card-dark: 0.23 0.06 30;
+        --warning: 0.70 0.18 60;
+        --warning-foreground: 0.20 0.03 60;
         
-        --sunset-light: 0.92 0.05 50;
-        --sunset-dark: 0.18 0.07 50;
-        --sunset-accent: 0.68 0.16 50;
-        --sunset-accent-light: 0.78 0.14 50;
-        --sunset-border: 0.84 0.06 50;
-        --sunset-border-dark: 0.26 0.08 50;
-        --sunset-card-dark: 0.21 0.07 50;
+        /* Valentine theme-specific colors */
+        --valentine-pink: 0.75 0.20 350;
+        --valentine-rose: 0.55 0.25 10;
+        --valentine-peach: 0.80 0.15 40;
+        --valentine-lavender: 0.70 0.15 310;
     }
 
     .dark {
-        /* Warm peach/coral/sunset palette - dark mode */
-        --background: 0.18 0.05 35;
-        --foreground: 0.95 0.02 45;
+        /* Romantic pink/rose palette - dark mode */
+        --background: 0.18 0.04 340;
+        --foreground: 0.95 0.02 350;
         
-        --card: 0.22 0.06 35;
-        --card-foreground: 0.95 0.02 45;
+        --card: 0.22 0.05 340;
+        --card-foreground: 0.95 0.02 350;
         
-        --popover: 0.20 0.06 35;
-        --popover-foreground: 0.95 0.02 45;
+        --popover: 0.20 0.05 340;
+        --popover-foreground: 0.95 0.02 350;
         
-        --primary: 0.75 0.14 35;
-        --primary-foreground: 0.18 0.05 35;
+        --primary: 0.65 0.20 350;
+        --primary-foreground: 0.18 0.04 340;
         
-        --secondary: 0.28 0.06 35;
-        --secondary-foreground: 0.95 0.02 45;
+        --secondary: 0.28 0.05 340;
+        --secondary-foreground: 0.95 0.02 350;
         
-        --muted: 0.28 0.06 35;
-        --muted-foreground: 0.70 0.03 35;
+        --muted: 0.28 0.05 340;
+        --muted-foreground: 0.65 0.03 345;
         
-        --accent: 0.32 0.07 35;
-        --accent-foreground: 0.95 0.02 45;
+        --accent: 0.35 0.08 355;
+        --accent-foreground: 0.95 0.02 350;
         
-        --destructive: 0.60 0.20 25;
-        --destructive-foreground: 0.95 0.02 45;
+        --destructive: 0.60 0.20 15;
+        --destructive-foreground: 0.95 0.02 350;
         
-        --border: 0.28 0.06 35;
-        --input: 0.28 0.06 35;
-        --ring: 0.70 0.12 35;
+        --border: 0.28 0.05 340;
+        --input: 0.28 0.05 340;
+        --ring: 0.65 0.18 350;
+        
+        --success: 0.65 0.16 150;
+        --success-foreground: 0.18 0.04 150;
+        
+        --warning: 0.75 0.16 60;
+        --warning-foreground: 0.18 0.04 60;
+        
+        /* Valentine theme-specific colors */
+        --valentine-pink: 0.70 0.18 350;
+        --valentine-rose: 0.60 0.22 10;
+        --valentine-peach: 0.75 0.14 40;
+        --valentine-lavender: 0.65 0.14 310;
+    }
+
+    /* Theme variations */
+    [data-valentine-theme="cute-pink"] {
+        --primary: 0.75 0.20 350;
+        --accent: 0.85 0.10 340;
+        --card: 0.98 0.03 350;
+    }
+
+    [data-valentine-theme="floating-hearts"] {
+        --primary: 0.65 0.22 355;
+        --accent: 0.80 0.12 10;
+        --card: 0.96 0.04 355;
+    }
+
+    [data-valentine-theme="anime"] {
+        --primary: 0.70 0.18 330;
+        --accent: 0.75 0.15 310;
+        --card: 0.95 0.05 320;
+    }
+
+    [data-valentine-theme="elegant-red"] {
+        --primary: 0.55 0.25 10;
+        --accent: 0.70 0.18 20;
+        --card: 0.97 0.03 5;
     }
 
     * {
@@ -100,93 +124,142 @@
     
     body {
         @apply bg-background text-foreground;
-        font-family: 'Quicksand', sans-serif;
+        font-family: 'Poppins', sans-serif;
     }
     
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Quicksand', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-weight: 700;
     }
     
     .font-display {
-        font-family: 'Pacifico', cursive;
+        font-family: 'Caveat', cursive;
+    }
+    
+    .font-script {
+        font-family: 'Dancing Script', cursive;
     }
 }
 
 @layer utilities {
-    /* Floating particle animation */
-    @keyframes float-particle {
+    /* Float animation for hearts */
+    @keyframes float-up {
         0% {
             transform: translateY(0) translateX(0) rotate(0deg);
             opacity: 0;
         }
         10% {
-            opacity: 0.7;
+            opacity: 1;
         }
         90% {
-            opacity: 0.7;
+            opacity: 1;
         }
         100% {
-            transform: translateY(-110vh) translateX(30px) rotate(360deg);
+            transform: translateY(-100vh) translateX(var(--drift-x, 20px)) rotate(var(--rotate, 15deg));
             opacity: 0;
         }
     }
     
-    .animate-float-particle {
-        animation: float-particle linear infinite;
+    .animate-float-up {
+        animation: float-up var(--duration, 8s) ease-in-out infinite;
     }
     
-    /* Gentle float for hero image */
-    @keyframes gentle-float {
+    /* Sparkle animation */
+    @keyframes sparkle {
         0%, 100% {
-            transform: translateY(0px);
+            opacity: 0;
+            transform: scale(0) rotate(0deg);
         }
         50% {
-            transform: translateY(-20px);
+            opacity: 1;
+            transform: scale(1) rotate(180deg);
         }
     }
     
-    .animate-gentle-float {
-        animation: gentle-float 4s ease-in-out infinite;
+    .animate-sparkle {
+        animation: sparkle var(--duration, 2s) ease-in-out infinite;
     }
     
-    /* Slow spin for ring icons */
-    @keyframes spin-slow {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
-    
-    .animate-spin-slow {
-        animation: spin-slow 8s linear infinite;
-    }
-    
-    /* Confetti fall animation */
+    /* Confetti fall */
     @keyframes confetti-fall {
         0% {
-            transform: translateY(-10vh) rotate(0deg);
+            transform: translateY(-100vh) rotate(0deg);
             opacity: 1;
         }
         100% {
-            transform: translateY(110vh) rotate(720deg);
+            transform: translateY(100vh) rotate(720deg);
             opacity: 0;
         }
     }
     
     .animate-confetti-fall {
-        animation: confetti-fall ease-in forwards;
+        animation: confetti-fall var(--duration, 3s) ease-in forwards;
+    }
+    
+    /* Gentle pulse for avatar */
+    @keyframes gentle-pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+    }
+    
+    .animate-gentle-pulse {
+        animation: gentle-pulse 3s ease-in-out infinite;
+    }
+    
+    /* Heart beat */
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+        10%, 30% {
+            transform: scale(1.1);
+        }
+        20%, 40% {
+            transform: scale(1);
+        }
+    }
+    
+    .animate-heartbeat {
+        animation: heartbeat 1.5s ease-in-out infinite;
+    }
+    
+    /* Shimmer effect for loading */
+    @keyframes shimmer {
+        0% {
+            background-position: -1000px 0;
+        }
+        100% {
+            background-position: 1000px 0;
+        }
+    }
+    
+    .animate-shimmer {
+        animation: shimmer 2s infinite linear;
+        background: linear-gradient(
+            to right,
+            transparent 0%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 100%
+        );
+        background-size: 1000px 100%;
     }
     
     /* Respect reduced motion preferences */
     @media (prefers-reduced-motion: reduce) {
-        .animate-float-particle,
-        .animate-gentle-float,
-        .animate-spin-slow,
+        .animate-float-up,
+        .animate-sparkle,
         .animate-confetti-fall,
-        .animate-pulse {
+        .animate-gentle-pulse,
+        .animate-heartbeat,
+        .animate-shimmer,
+        .animate-pulse,
+        .animate-spin {
             animation: none;
         }
         

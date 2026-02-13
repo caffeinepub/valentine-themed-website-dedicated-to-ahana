@@ -1,78 +1,156 @@
 {
   "kind": "build_request",
-  "title": "Convert Ahana Valentine proposal site to simple cute text-only page (no photos)",
+  "title": "Build a Valentine website for Ahana & Suvo with cute animations and multi-theme styles",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-23",
-      "text": "Remove all photo usage from the current single-page site and make the Valentine/proposal experience completely text-only (do not display any uploaded images, including IMG_5979.jpeg, and remove all <img> references such as /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg).",
+      "id": "REQ-1",
+      "text": "Replace the current Isabella voice companion landing experience with a dedicated Valentine website page for Ahana from Suvo, making this Valentine page the default rendered route in the app.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-1",
+          "msg-2",
+          "msg-8"
         ],
         "quotes": [
-          "No pics",
-          "No photos just simple like our first web cute",
-          "Build it now"
+          "Make a valentine website for my gf “ahana” make special animations cute and pretty web and some cute gestures just build it now.",
+          "Add my name also",
+          "Start"
         ]
       },
       "acceptanceCriteria": [
-        "The page renders with zero photo/image sections intended as photos (no couple photos, no hero photo).",
-        "No code in the rendered page references /assets/photos/IMG_3752.jpeg or /assets/photos/IMG_3753.jpeg.",
-        "The uploaded image IMG_5979.jpeg is not referenced or displayed anywhere in the UI."
+        "Opening the app shows the Valentine website content (not the Isabella voice companion UI).",
+        "The existing Isabella/VoiceCompanionPage code remains in the codebase (not deleted), but it is not the default entry page."
       ]
     },
     {
-      "id": "REQ-24",
-      "text": "Ensure the app renders a simple, cute, Valentine-themed single-page message for Ahana that is clearly from Suvo, keeping all user-facing text in English and aligning the layout/content with the earlier ‘first web’ Valentine style (hero + short love note/letter + reasons list + closing CTA).",
+      "id": "REQ-2",
+      "text": "Ensure the names “Ahana” and “Suvo” appear together throughout the Valentine website (e.g., headers, love note, CTA text, success/celebration state, and any repeating labels), using consistent formatting (for example: “Ahana & Suvo”).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-2",
+          "msg-3",
+          "msg-7"
         ],
         "quotes": [
-          "Make a simple proposal web for my gf ahana for velentine like first web",
-          "No photos just simple like our first web cute"
+          "Add my name also",
+          "Every where with ahana name",
+          "My name is suvo"
         ]
       },
       "acceptanceCriteria": [
-        "The page includes: (1) a hero section addressed to Ahana, (2) a short love note/letter signed by Suvo, (3) a static ‘reasons’ list, and (4) a closing Valentine CTA section.",
-        "All visible text is in English and clearly indicates it is for Ahana and from Suvo.",
-        "No photo placeholders or empty photo blocks remain in the layout."
+        "All major visible sections of the Valentine website include both names together (not only one name).",
+        "No section displays only “Ahana” without also displaying “Suvo” (except where grammatically necessary, in which case both names must still appear prominently in the same section)."
       ]
     },
     {
-      "id": "REQ-25",
-      "text": "Update the closing interaction copy to be Valentine-focused (e.g., “Ahana, will you be my Valentine?”) and keep the interaction simple (single-step or at most two steps) with an optional lightweight celebration effect that respects prefers-reduced-motion.",
+      "id": "REQ-3",
+      "text": "Implement cute/pretty Valentine animations and “cute gestures” on the Valentine website, including at minimum: a floating hearts layer, a sparkles/particles layer, and a celebratory effect when the user accepts (e.g., confetti burst). All animations must respect the user’s “prefers-reduced-motion” setting by significantly reducing or disabling motion.",
       "target": "frontend",
       "source": {
         "messageIds": [
           "msg-1"
         ],
         "quotes": [
-          "simple like our first web cute",
-          "velentine"
+          "Make a valentine website for my gf “ahana” make special animations cute and pretty web and some cute gestures just build it now."
         ]
       },
       "acceptanceCriteria": [
-        "The CTA prompt asks Ahana to be the user’s Valentine (not ‘girlfriend’ unless explicitly included as secondary copy).",
-        "The interaction completes in one step (or two steps maximum) and ends in a celebratory ‘Yes’ outcome addressed to Ahana and attributed to Suvo.",
-        "If celebration animation (e.g., confetti) runs, it does not run when prefers-reduced-motion is enabled."
+        "The Valentine page visibly shows floating hearts and sparkle/particle effects when motion is allowed.",
+        "A clear celebration animation (e.g., confetti burst) triggers on an explicit positive user action (e.g., clicking “Yes”).",
+        "When the OS/browser prefers-reduced-motion is enabled, the page avoids continuous motion (hearts/particles/confetti are disabled or substantially minimized)."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add an interactive Valentine proposal moment/flow on the Valentine website that culminates in a clear “Yes” acceptance outcome and shows a personalized success message that includes both “Ahana” and “Suvo”. Include at least one playful micro-interaction (“cute gesture”), such as a button hover reaction, a short step-by-step reveal, or a small surprise reveal section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Make a valentine website for my gf “ahana” make special animations cute and pretty web and some cute gestures just build it now."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The page contains an explicit proposal CTA (e.g., “Will you be my Valentine?”) with a “Yes” action.",
+        "After clicking “Yes”, the UI transitions to a celebration/success state that includes both names together.",
+        "At least one additional interactive micro-interaction exists beyond clicking “Yes” (e.g., a reveal, step flow, or playful button behavior)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Provide a theme/style selector on the Valentine website that lets the user switch between these four visual styles: (1) cute pink hearts everywhere, (2) floating hearts + sparkles, (3) anime theme, and (4) elegant romantic red theme. Theme changes should update colors/typography/decoration consistently across the page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6"
+        ],
+        "quotes": [
+          "Add all of these"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A visible theme selector control exists on the Valentine page.",
+        "Switching themes clearly changes the overall look (palette and/or decorative treatment) while keeping content and functionality intact.",
+        "All four named themes are available and selectable."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Establish and apply a coherent Valentine visual design system across the Valentine website (colors, typography, spacing, buttons, cards/sections) with a cute romantic aesthetic (avoid blue/purple by default). Keep all user-facing text in English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-9"
+        ],
+        "quotes": [
+          "Make a valentine website for my gf “ahana” make special animations cute and pretty web and some cute gestures just build it now.",
+          "Use English for any user-facing text in the build request."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Valentine website uses a consistent romantic design (e.g., pink/peach/red tones, soft gradients, rounded elements, cohesive typography).",
+        "No user-facing UI copy appears in a language other than English.",
+        "Design looks intentional and consistent across all sections and states (default, hover, success/celebration)."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Update the document title and meta description in the HTML entry point to reflect the Valentine website for Ahana & Suvo (instead of Isabella branding).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-2",
+          "msg-7"
+        ],
+        "quotes": [
+          "Make a valentine website for my gf “ahana” make special animations cute and pretty web and some cute gestures just build it now.",
+          "Add my name also",
+          "My name is suvo"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Browser tab title reflects the Valentine website and includes both names (Ahana and Suvo).",
+        "Meta description references a Valentine website experience (not Isabella/AI companion)."
       ]
     }
   ],
   "constraints": [
-    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
-    "Do not add or require authentication for this page.",
-    "Do not add backend functionality; backend/main.mo must remain unchanged unless strictly necessary.",
-    "All user-facing text must be in English.",
-    "The site must be text-only (no photos)."
+    "Do not edit files under frontend/src/components/ui (read-only).",
+    "Do not edit immutable hook files: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx.",
+    "Backend must remain a single Motoko actor; do not introduce additional backend services."
   ],
   "nonGoals": [
-    "Creating a new separate ‘introduction website’ or implementing the earlier red/black egotistic theme.",
-    "Displaying or incorporating the uploaded image IMG_5979.jpeg anywhere on the site.",
-    "Adding any database or external service integrations."
+    "Do not add third-party authentication providers (only Internet Identity exists, and it is not required for this Valentine site).",
+    "Do not add external AI/LLM integrations or any server-side chat logic.",
+    "Do not implement real-time features (WebSockets/push notifications).",
+    "No requirement to store user data persistently on-chain for this Valentine website unless explicitly requested later."
   ],
   "imageRequirements": {
     "required": [],

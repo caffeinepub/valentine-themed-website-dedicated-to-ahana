@@ -2,11 +2,51 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-remove-all-photo-usage-from-the-current-single-page-site-and-make-the-valentine-proposal-experience-completely-text-only-do-not-display-any-uploaded-images-including-img-5979-jpeg-and-remove-all-img-references-such-as-assets-photos-img-3752-jpeg-and-assets-photos-img-3753-jpeg",
-      "featureTitle": "Remove all photo usage from the current single-page site and make the Valentine/proposal experience completely text-only (do not display any uploaded images, including IMG_5979.jpeg, and remove all <img> references such as /assets/photos/IMG_3752.jpeg and /assets/photos/IMG_3753.jpeg).",
+      "featureId": "feature-replace-the-current-isabella-voice-companion-landing-experience-with-a-dedicated-valentine-website-page-for-ahana-from-suvo-making-this-valentine-page-the-default-rendered-route-in-the-app",
+      "featureTitle": "Replace the current Isabella voice companion landing experience with a dedicated Valentine website page for Ahana from Suvo, making this Valentine page the default rendered route in the app.",
       "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/AhanaValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-names-ahana-and-suvo-appear-together-throughout-the-valentine-website-e-g-headers-love-note-cta-text-success-celebration-state-and-any-repeating-labels-using-consistent-formatting-for-example-ahana-suvo",
+      "featureTitle": "Ensure the names “Ahana” and “Suvo” appear together throughout the Valentine website (e.g., headers, love note, CTA text, success/celebration state, and any repeating labels), using consistent formatting (for example: “Ahana & Suvo”).",
+      "files": [
+        "frontend/src/components/ProposalStepFlow.tsx",
+        "frontend/src/pages/AhanaValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-cute-pretty-valentine-animations-and-cute-gestures-on-the-valentine-website-including-at-minimum-a-floating-hearts-layer-a-sparkles-particles-layer-and-a-celebratory-effect-when-the-user-accepts-e-g-confetti-burst-all-animations-must-respect-the-user-s-prefers-reduced-motion-setting-by-significantly-reducing-or-disabling-motion",
+      "featureTitle": "Implement cute/pretty Valentine animations and “cute gestures” on the Valentine website, including at minimum: a floating hearts layer, a sparkles/particles layer, and a celebratory effect when the user accepts (e.g., confetti burst). All animations must respect the user’s “prefers-reduced-motion” setting by significantly reducing or disabling motion.",
+      "files": [
+        "frontend/src/components/ConfettiBurst.tsx",
         "frontend/src/components/CuteParticles.tsx",
-        "frontend/src/pages/AhanaProposalPage.tsx"
+        "frontend/src/components/FloatingHearts.tsx",
+        "frontend/src/pages/AhanaValentinePage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -16,34 +56,18 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-23"
+        "REQ-3"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-ensure-the-app-renders-a-simple-cute-valentine-themed-single-page-message-for-ahana-that-is-clearly-from-suvo-keeping-all-user-facing-text-in-english-and-aligning-the-layout-content-with-the-earlier-first-web-valentine-style-hero-short-love-note-letter-reasons-list-closing-cta",
-      "featureTitle": "Ensure the app renders a simple, cute, Valentine-themed single-page message for Ahana that is clearly from Suvo, keeping all user-facing text in English and aligning the layout/content with the earlier ‘first web’ Valentine style (hero + short love note/letter + reasons list + closing CTA).",
+      "featureId": "feature-add-an-interactive-valentine-proposal-moment-flow-on-the-valentine-website-that-culminates-in-a-clear-yes-acceptance-outcome-and-shows-a-personalized-success-message-that-includes-both-ahana-and-suvo-include-at-least-one-playful-micro-interaction-cute-gesture-such-as-a-button-hover-reaction-a-short-step-by-step-reveal-or-a-small-surprise-reveal-section",
+      "featureTitle": "Add an interactive Valentine proposal moment/flow on the Valentine website that culminates in a clear “Yes” acceptance outcome and shows a personalized success message that includes both “Ahana” and “Suvo”. Include at least one playful micro-interaction (“cute gesture”), such as a button hover reaction, a short step-by-step reveal, or a small surprise reveal section.",
       "files": [
-        "frontend/src/pages/AhanaProposalPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-24"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-update-the-closing-interaction-copy-to-be-valentine-focused-e-g-ahana-will-you-be-my-valentine-and-keep-the-interaction-simple-single-step-or-at-most-two-steps-with-an-optional-lightweight-celebration-effect-that-respects-prefers-reduced-motion",
-      "featureTitle": "Update the closing interaction copy to be Valentine-focused (e.g., “Ahana, will you be my Valentine?”) and keep the interaction simple (single-step or at most two steps) with an optional lightweight celebration effect that respects prefers-reduced-motion.",
-      "files": [
+        "frontend/src/components/ProposalStepFlow.tsx",
         "frontend/src/components/SimpleProposalMoment.tsx",
-        "frontend/src/pages/AhanaProposalPage.tsx"
+        "frontend/src/components/SurpriseReveal.tsx",
+        "frontend/src/pages/AhanaValentinePage.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -53,7 +77,63 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-25"
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-provide-a-theme-style-selector-on-the-valentine-website-that-lets-the-user-switch-between-these-four-visual-styles-1-cute-pink-hearts-everywhere-2-floating-hearts-sparkles-3-anime-theme-and-4-elegant-romantic-red-theme-theme-changes-should-update-colors-typography-decoration-consistently-across-the-page",
+      "featureTitle": "Provide a theme/style selector on the Valentine website that lets the user switch between these four visual styles: (1) cute pink hearts everywhere, (2) floating hearts + sparkles, (3) anime theme, and (4) elegant romantic red theme. Theme changes should update colors/typography/decoration consistently across the page.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/AhanaValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-establish-and-apply-a-coherent-valentine-visual-design-system-across-the-valentine-website-colors-typography-spacing-buttons-cards-sections-with-a-cute-romantic-aesthetic-avoid-blue-purple-by-default-keep-all-user-facing-text-in-english",
+      "featureTitle": "Establish and apply a coherent Valentine visual design system across the Valentine website (colors, typography, spacing, buttons, cards/sections) with a cute romantic aesthetic (avoid blue/purple by default). Keep all user-facing text in English.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/AhanaValentinePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-document-title-and-meta-description-in-the-html-entry-point-to-reflect-the-valentine-website-for-ahana-suvo-instead-of-isabella-branding",
+      "featureTitle": "Update the document title and meta description in the HTML entry point to reflect the Valentine website for Ahana & Suvo (instead of Isabella branding).",
+      "files": [
+        "frontend/index.html"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
       ],
       "confidence": "high"
     }
